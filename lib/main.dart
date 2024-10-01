@@ -1,8 +1,7 @@
 import 'package:everything_is_connected_app/constant.dart';
-
+import 'package:everything_is_connected_app/core/utils/common_widgets/background_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -20,6 +19,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          scaffoldBackgroundColor: Colors.transparent,
           textTheme: GoogleFonts.abyssinicaSilTextTheme().apply(
             bodyColor: defaultColor,
           ),
@@ -35,6 +35,12 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: BackgroundImage(
+        child: Center(
+          child: const Text("Go to MyWidget"),
+        ),
+      ),
+    );
   }
 }
