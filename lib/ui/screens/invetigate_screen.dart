@@ -19,72 +19,75 @@ class InvetigateScreen extends StatelessWidget {
 
         return Scaffold(
           body: BackgroundImage(
-            child: Padding(
-              padding: EdgeInsets.only(
-                top: 70.h,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 10.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigation.pushAndRemoveUntil(
-                                context, MainScreen());
-                          },
-                          child: AnimatedArrow(
-                            ontap: () {
+            child: SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: 70.h,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 10.w),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () {
                               Navigation.pushAndRemoveUntil(
                                   context, MainScreen());
                             },
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Center(
-                    child: LayoutBuilder(builder:
-                        (BuildContext context, BoxConstraints constraints) {
-                      return Stack(
-                        alignment: Alignment.center,
-                        clipBehavior: Clip.none,
-                        children: [
-                          SvgPicture.asset(
-                            "assets/images/board_frame.svg",
-                          ),
-                          Positioned(
-                              left: 16.w, top: 94.h, child: ChooseSystem()),
-                          Positioned(
-                              left: 109.w, top: 94.h, child: ChooseSystem()),
-                          Positioned(
-                              left: 170.w, top: 94.h, child: ChooseSystem()),
-                          Positioned(
-                              left: 67.w, top: 183.h, child: ChooseSystem()),
-                          Positioned(
-                              left: 16.w, top: 300.h, child: ChooseSystem()),
-                          Positioned(
-                              left: 109.w, top: 300.h, child: ChooseSystem()),
-                          Positioned(
-                              left: 170.w, top: 260.h, child: ChooseSystem()),
-                          Positioned(
-                              left: 220.w, top: 170.h, child: ChooseSystem()),
+                            child: AnimatedArrow(
+                              ontap: () {
+                                Navigation.pushAndRemoveUntil(
+                                    context, MainScreen());
+                              },
+                            ),
+                          )
                         ],
-                      );
-                    }),
-                  ),
-                  SizedBox(
-                    height: 18.h,
-                  ),
-                  Center(
-                      child: SvgPicture.asset(
-                    "assets/images/Press on any image to Start Your Investigation.svg",
-                  ))
-                ],
+                      ),
+                    ),
+                    Center(
+                      child: LayoutBuilder(builder:
+                          (BuildContext context, BoxConstraints constraints) {
+                        return Stack(
+                          alignment: Alignment.center,
+                          clipBehavior: Clip.none,
+                          children: [
+                            SvgPicture.asset(
+                              "assets/images/board_frame.svg",
+                            ),
+                            Positioned(
+                                left: 16.w, top: 94.h, child: ChooseSystem()),
+                            Positioned(
+                                left: 109.w, top: 94.h, child: ChooseSystem()),
+                            Positioned(
+                                left: 170.w, top: 94.h, child: ChooseSystem()),
+                            Positioned(
+                                left: 67.w, top: 183.h, child: ChooseSystem()),
+                            Positioned(
+                                left: 16.w, top: 300.h, child: ChooseSystem()),
+                            Positioned(
+                                left: 109.w, top: 300.h, child: ChooseSystem()),
+                            Positioned(
+                                left: 170.w, top: 260.h, child: ChooseSystem()),
+                            Positioned(
+                                left: 220.w, top: 170.h, child: ChooseSystem()),
+                          ],
+                        );
+                      }),
+                    ),
+                    SizedBox(
+                      height: 18.h,
+                    ),
+                    Center(
+                        child: SvgPicture.asset(
+                      "assets/images/Press on any image to Start Your Investigation.svg",
+                    ))
+                  ],
+                ),
               ),
             ),
           ),
