@@ -3,6 +3,8 @@ import 'package:everything_is_connected_app/core/utils/my_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:url_launcher/url_launcher.dart';
@@ -22,36 +24,34 @@ class MessageTile extends StatelessWidget {
       crossAxisAlignment:
           sendByMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
       children: [
-        Text(
-          sendByMe ? 'You' : 'AI Model',
-          style: const TextStyle(fontSize: 11.5, color: Colors.grey),
-        ),
-        const SizedBox(
-          height: 5,
-        ),
+        // Row(
+        //   children: [
+        //     // Text(
+        //     //   sendByMe ? 'You' : '',
+        //     //   style: const TextStyle(fontSize: 11.5, color: Colors.grey),
+        //     // ),
+        //   ]
+        // ),
+        // const SizedBox(
+        //   height: 5,
+        // ),
         Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: size.width / 1.3,
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 13),
-              decoration: BoxDecoration(
-                color: sendByMe
-                    ? Color.fromARGB(255, 14, 60, 80)
-                    : Colors.transparent,
-                // borderRadius: BorderRadius.only(
-                //   bottomLeft: sendByMe
-                //       ? const Radius.circular(12)
-                //       : const Radius.circular(5),
-                //   topLeft: const Radius.circular(12),
-                //   topRight: const Radius.circular(12),
-                //   bottomRight: sendByMe
-                //       ? const Radius.circular(5)
-                //       : const Radius.circular(12),
-                // )
-              ),
-              child: MarkdownBody(
+            sendByMe == false
+                ? SvgPicture.asset("assets/images/ai_avatar.svg")
+                : const SizedBox.shrink(),
+            Flexible(
+              child: Container(
+                // width: size.width / 1.3,
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 13),
+                decoration: BoxDecoration(
+                  color: sendByMe
+                      ? Color.fromARGB(255, 14, 60, 80)
+                      : Colors.transparent,
+                ),
+                child: MarkdownBody(
                   selectable: true,
                   data: message,
                   extensionSet: md.ExtensionSet(
@@ -64,29 +64,29 @@ class MessageTile extends StatelessWidget {
                   onTapLink: (text, href, title) async {
                     await _launchUrl(text);
                   },
+                ),
               ),
             ),
-            if (!sendByMe) ...[
+            // if (!sendByMe) ...[
               // const SizedBox(
               //   width: 8,
               // ),
-              IconButton(
-                  onPressed: () async {
-                    await Clipboard.setData(ClipboardData(
-                      text: message,
-                    ));
-                  },
-                  icon: Icon(
-                    Icons.file_copy_outlined,
-                    color: Colors.grey.shade300,
-                    size: 20,
-                  )),
+              // IconButton(
+              //     onPressed: () async {
+              //       await Clipboard.setData(ClipboardData(
+              //         text: message,
+              //       ));
+              //     },
+              //     icon: Icon(
+              //       Icons.file_copy_outlined,
+              //       size: 20,
+              //     )),
               // Icon(
               //   Icons.file_copy_outlined,
               //   color: Colors.grey.shade300,
               //   size: 20,
               // )
-            ]
+            // ]
           ],
         ),
       ],
