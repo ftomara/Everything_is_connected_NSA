@@ -1,7 +1,7 @@
 import 'package:everything_is_connected_app/core/utils/common_widgets/background_image.dart';
-import 'package:everything_is_connected_app/core/utils/common_widgets/blue_button.dart';
+import 'package:everything_is_connected_app/ui/widgets/blue_button.dart';
 
-import 'package:everything_is_connected_app/screens/explore_ai_chat.dart';
+import 'package:everything_is_connected_app/ui/screens/explore_ai_chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

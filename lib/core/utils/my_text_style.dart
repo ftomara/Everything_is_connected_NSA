@@ -8,13 +8,13 @@ abstract class MyTextStyle {
   );
 
   static TextStyle textStyle8 =
-      TextStyle(fontSize: 8.sp, fontWeight: FontWeight.w400);
+      TextStyle(fontSize: 8, fontWeight: FontWeight.w400);
 
   static TextStyle textStyle40 =
       TextStyle(fontSize: 40.sp, fontWeight: FontWeight.w400);
 
   static TextStyle textStyle18 = TextStyle(
-    fontSize: 18.sp,
+    fontSize: 18,
     fontWeight: FontWeight.w400,
   );
 
@@ -39,5 +39,5 @@ abstract class MyTextStyle {
   );
 
   static TextStyle textStyle15 = TextStyle(
-      fontSize: 15.sp, fontWeight: FontWeight.w400, color: Color(0xffF0E6D2));
+      fontSize: 15, fontWeight: FontWeight.w400, color: Color(0xffF0E6D2));
 }
