@@ -1,6 +1,7 @@
 import 'package:everything_is_connected_app/core/utils/common_widgets/background_image.dart';
 import 'package:everything_is_connected_app/core/utils/common_widgets/linear_color.dart';
 import 'package:everything_is_connected_app/core/utils/common_widgets/messagetile.dart';
+import 'package:everything_is_connected_app/screens/info_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -48,125 +49,100 @@ class _ExploreAiChatState extends State<ExploreAiChat> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: BackgroundImage(
-        child: Container(
-          margin: EdgeInsets.only(top: 24.dg),
-          child: Center(
-            child: Stack(
+    return InfoScreen(
+      close: true,
+      arrow: false,
+      list: [
+        Positioned(
+          top: 100,
+          left: 50,
+          right: 50,
+          bottom: 150,
+          child: ListView.separated(
+            padding: const EdgeInsets.fromLTRB(15, 0, 15, 90),
+            itemCount: history.reversed.length,
+            controller: _scrollController,
+            reverse: true,
+            itemBuilder: (context, index) {
+              var content = history.reversed.toList()[index];
+              var text = content.parts
+                  .whereType<TextPart>()
+                  .map<String>((e) => e.text)
+                  .join('');
+              return MessageTile(
+                sendByMe: content.role == 'user',
+                message: text,
+              );
+            },
+            separatorBuilder: (context, index) {
+              return const SizedBox(
+                height: 15,
+              );
+            },
+          ),
+        ),
+        Positioned(
+          bottom: 24,
+          left: 42,
+          right: 42,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+            child: Row(
               children: [
-                SvgPicture.asset(
-                  "assets/images/info_board.svg",
-                  width: 1107.w, // Use appropriate scaling values
-                  height: 542.h, // Use appropriate scaling values
-                ),
-                // Positioned(
-                //     top: 10,
-                //     right: 0,
-                //     child: GestureDetector(
-                //       onTap: () {},
-                //       child: SvgPicture.asset("assets/images/close_icon.svg"),
-                //     )),
-                Positioned(
-                  top: 100,
-                  left: 50,
-                  right: 50,
-                  bottom: 150,
-                  child: ListView.separated(
-                    padding: const EdgeInsets.fromLTRB(15, 0, 15, 90),
-                    itemCount: history.reversed.length,
-                    controller: _scrollController,
-                    reverse: true,
-                    itemBuilder: (context, index) {
-                      var content = history.reversed.toList()[index];
-                      var text = content.parts
-                          .whereType<TextPart>()
-                          .map<String>((e) => e.text)
-                          .join('');
-                      return MessageTile(
-                        sendByMe: content.role == 'user',
-                        message: text,
-                      );
-                    },
-                    separatorBuilder: (context, index) {
-                      return const SizedBox(
-                        height: 15,
-                      );
-                    },
-                  ),
-                ),
-                Positioned(
-                  bottom: 24,
-                  left: 42,
-                  right: 42,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 15, vertical: 12),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: TextField(
-                            controller: _textController,
-                            autofocus: true,
-                            focusNode: _textFieldFocus,
-                            decoration: InputDecoration(
-                              suffix: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    history.add(Content('user',
-                                        [TextPart(_textController.text)]));
-                                  });
-                                  _sendChatMessage(
-                                      _textController.text, history.length);
-                                },
-                                child: Container(
-                                  child: _loading
-                                      ? const Padding(
-                                          padding: EdgeInsets.all(15.0),
-                                          child: CircularProgressIndicator
-                                              .adaptive(
-                                            backgroundColor: Colors.white,
-                                          ),
-                                        )
-                                      : SvgPicture.asset(
-                                          "assets/images/send_icon.svg"),
-                                ),
-                              ),
-                              border: GradientOutlineInputBorder(
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Color(0xFFE8DBC3),
-                                    Color(0xFFDFAB46)
-                                  ],
-                                ),
-                                width: 2,
-                              ),
-                              hintText: 'Write Your Message ...',
-                              hintStyle: const TextStyle(
-                                  color: Color.fromARGB(20, 255, 255, 255)),
-                              filled: true,
-                              fillColor: Colors
-                                  .transparent, // Transparent inside the TextField
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 15,
-                                vertical: 15,
-                              ),
-                            ),
-                          ),
+                Expanded(
+                  child: TextField(
+                    controller: _textController,
+                    autofocus: true,
+                    focusNode: _textFieldFocus,
+                    decoration: InputDecoration(
+                      suffix: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            history.add(Content(
+                                'user', [TextPart(_textController.text)]));
+                          });
+                          _sendChatMessage(
+                              _textController.text, history.length);
+                        },
+                        child: Container(
+                          child: _loading
+                              ? const Padding(
+                                  padding: EdgeInsets.all(15.0),
+                                  child: CircularProgressIndicator.adaptive(
+                                    backgroundColor: Color(0xFFDFAB46),
+                                  ),
+                                )
+                              : SvgPicture.asset("assets/images/send_icon.svg"),
                         ),
-                        const SizedBox(
-                          width: 10,
+                      ),
+                      border: GradientOutlineInputBorder(
+                        gradient: LinearGradient(
+                          colors: [Color(0xFFE8DBC3), Color(0xFFDFAB46)],
                         ),
-                      ],
+                        width: 2,
+                      ),
+                      hintText: 'Write Your Message ...',
+                      hintStyle: const TextStyle(
+                          color: Color.fromARGB(20, 255, 255, 255)),
+                      filled: true,
+                      fillColor: Colors
+                          .transparent, // Transparent inside the TextField
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 15,
+                      ),
                     ),
                   ),
+                ),
+                const SizedBox(
+                  width: 10,
                 ),
               ],
             ),
           ),
         ),
-      ),
+      ],
     );
   }
 
