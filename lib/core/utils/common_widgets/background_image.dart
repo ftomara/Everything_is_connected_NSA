@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class BackgroundImage extends StatelessWidget {
   final Widget child;
@@ -15,7 +13,7 @@ class BackgroundImage extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/images/fullbg.png"),
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
         ),

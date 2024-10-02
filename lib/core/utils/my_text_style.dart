@@ -33,7 +33,7 @@ abstract class MyTextStyle {
   );
 
   static TextStyle textStyle30 = TextStyle(
-    fontSize: 30.sp,
+    fontSize: 30,
     color: Color(0xffF0E6D2),
     fontWeight: FontWeight.w400,
   );
