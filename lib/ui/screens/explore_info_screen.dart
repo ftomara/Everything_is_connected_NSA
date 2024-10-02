@@ -1,4 +1,6 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:everything_is_connected_app/core/utils/my_text_style.dart';
+import 'package:everything_is_connected_app/ui/screens/explore_ai_chat.dart';
 import 'package:everything_is_connected_app/ui/screens/info_screen.dart';
 import 'package:everything_is_connected_app/ui/widgets/choose_system.dart';
 import 'package:flutter/material.dart';
@@ -25,15 +27,31 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
         ),
       ),
       Positioned(
-        bottom: 24,
-        left: 20,
-        child: Row(
-        children: [
-          SvgPicture.asset("assets/images/ai_avatar.svg"),
-          SizedBox(width: 4.w,),
-          Text("Need to Know More ? Let's Have a Chat !" , style: MyTextStyle.textStyle12.copyWith(fontSize: 24),),
-        ],
-      ))
+          bottom: 24,
+          left: 20,
+          child: Row(
+            children: [
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ExploreAiChat(),
+                      ),
+                    );
+                  },
+                  child: SvgPicture.asset("assets/images/ai_avatar.svg")),
+              SizedBox(
+                width: 4.w,
+              ),
+              AnimatedTextKit(animatedTexts: [
+                TyperAnimatedText(
+                  "Need to Know More ? Let's Have a Chat !",
+                  textStyle: MyTextStyle.textStyle12.copyWith(fontSize: 24),
+                ),
+              ]),
+            ],
+          ))
     ]);
   }
 }

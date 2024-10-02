@@ -69,11 +69,11 @@ dev_dependencies:
     sdk: flutter
   json_serializable: ^6.8.0
 
-flutter_launcher_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/images/appIcon2.png"
-  min_sdk_android: 21
+# flutter_launcher_icons:
+#   android: "launcher_icon"
+#   ios: true
+#   image_path: "assets/images/appIcon2.png"
+#   min_sdk_android: 21
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.

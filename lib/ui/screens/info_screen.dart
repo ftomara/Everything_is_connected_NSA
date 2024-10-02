@@ -1,4 +1,5 @@
 import 'package:everything_is_connected_app/core/utils/common_widgets/background_image.dart';
+import 'package:everything_is_connected_app/ui/widgets/animated_arrow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -59,7 +60,9 @@ class _InfoScreenState extends State<InfoScreen> {
                 ),
                 widget.close
                     ? GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
                         child: SvgPicture.asset(
                           "assets/images/close_icon.svg",
                         ),
@@ -69,19 +72,13 @@ class _InfoScreenState extends State<InfoScreen> {
                   height: 225.h,
                 ),
                 widget.arrow
-                    ? Center(
-                        child: GestureDetector(
-                          onTap: () {},
-                          child: Transform(
+                    ?  Transform(
                             alignment: Alignment.center,
                             transform:
                                 Matrix4.rotationY(3.14159), 
-                            child: SvgPicture.asset(
-                              "assets/images/ArrowLeft&Right.svg",
-                            ),
-                          ),
-                        ),
-                      )
+                            child: AnimatedArrow(ontap: (){},),
+                          )
+                  
                     : SizedBox.shrink(),
               ],
             ),
