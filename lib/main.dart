@@ -1,5 +1,6 @@
 import 'package:everything_is_connected_app/constant.dart';
 import 'package:everything_is_connected_app/core/utils/common_widgets/background_image.dart';
+import 'package:everything_is_connected_app/screens/explore_ai_chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
             bodyColor: defaultColor,
           ),
         ),
-        home: const MyHomePage(),
+        // home: const MyHomePage(),
+        home: ExploreAiChat(),
       ),
     );
   }
