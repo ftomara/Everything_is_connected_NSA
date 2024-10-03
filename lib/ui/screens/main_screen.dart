@@ -1,5 +1,7 @@
 import 'package:everything_is_connected_app/core/utils/common_widgets/background_image.dart';
+
 import 'package:everything_is_connected_app/core/utils/common_widgets/navigation.dart';
+import 'package:everything_is_connected_app/core/utils/common_widgets/system_dialogue.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/invetigate_screen.dart';
 import 'package:everything_is_connected_app/ui/widgets/category_button.dart';
@@ -44,7 +46,9 @@ class MainScreen extends StatelessWidget {
                           left: isMobile ? 30.w : 44.w,
                           top: -20.h,
                           child: CategoryButton(
-                            onTap: () {},
+                            onTap: () {
+                              systemDialogue("Atmosphere", "ok", context);
+                            },
                             text: "Atmosphere",
                           ),
                         ),
@@ -52,7 +56,9 @@ class MainScreen extends StatelessWidget {
                           left: isMobile ? 70.w : 90.w,
                           top: -20.h,
                           child: CategoryButton(
-                            onTap: () {},
+                            onTap: () {
+                              systemDialogue("Biosphere", "ok", context);
+                            },
                             text: "Biosphere",
                           ),
                         ),
@@ -60,7 +66,9 @@ class MainScreen extends StatelessWidget {
                           left: isMobile ? 110.w : 136.w,
                           top: -20.h,
                           child: CategoryButton(
-                            onTap: () {},
+                            onTap: () {
+                              systemDialogue("Cryosphere", "ok", context);
+                            },
                             text: "Cryosphere",
                           ),
                         ),
@@ -68,28 +76,62 @@ class MainScreen extends StatelessWidget {
                           left: isMobile ? 150.w : 182.w,
                           top: -20.h,
                           child: CategoryButton(
-                            onTap: () {},
+                            onTap: () {
+                              systemDialogue("Geosphere", "ok", context);
+                            },
                             text: "Geosphere",
                           ),
                         ),
                         // Positioned ChooseSystem widgets
 
                         Positioned(
-                            left: 16.w, top: 90.h, child: ChooseSystem()),
+                            left: 16.w,
+                            top: 90.h,
+                            child: ChooseSystem(
+                              isMain: true,
+                            )),
                         Positioned(
-                            left: 109.w, top: 90.h, child: ChooseSystem()),
+                            left: 109.w,
+                            top: 90.h,
+                            child: ChooseSystem(
+                              isMain: true,
+                            )),
                         Positioned(
-                            left: 170.w, top: 90.h, child: ChooseSystem()),
+                            left: 170.w,
+                            top: 90.h,
+                            child: ChooseSystem(
+                              isMain: true,
+                            )),
                         Positioned(
-                            left: 67.w, top: 180.h, child: ChooseSystem()),
+                            left: 67.w,
+                            top: 180.h,
+                            child: ChooseSystem(
+                              isMain: true,
+                            )),
                         Positioned(
-                            left: 16.w, top: 290.h, child: ChooseSystem()),
+                            left: 16.w,
+                            top: 290.h,
+                            child: ChooseSystem(
+                              isMain: true,
+                            )),
                         Positioned(
-                            left: 109.w, top: 290.h, child: ChooseSystem()),
+                            left: 109.w,
+                            top: 290.h,
+                            child: ChooseSystem(
+                              isMain: true,
+                            )),
                         Positioned(
-                            left: 170.w, top: 250.h, child: ChooseSystem()),
+                            left: 170.w,
+                            top: 250.h,
+                            child: ChooseSystem(
+                              isMain: true,
+                            )),
                         Positioned(
-                            left: 220.w, top: 160.h, child: ChooseSystem()),
+                            left: 220.w,
+                            top: 160.h,
+                            child: ChooseSystem(
+                              isMain: true,
+                            )),
                       ],
                     ),
                     SizedBox(

@@ -62,7 +62,11 @@ class InvetigateScreen extends StatelessWidget {
                               "assets/images/board_frame.svg",
                             ),
                             Positioned(
-                                left: 16.w, top: 90.h, child: ChooseSystem()),
+                                left: 16.w,
+                                top: 90.h,
+                                child: ChooseSystem(
+                                  isExplore: true,
+                                )),
                             Positioned(
                                 left: 109.w,
                                 top: 90.h,

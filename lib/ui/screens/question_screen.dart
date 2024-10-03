@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:everything_is_connected_app/constant.dart';
+
 import 'package:everything_is_connected_app/core/utils/my_text_style.dart';
 import 'package:everything_is_connected_app/model/infomodel.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_ai_chat.dart';
@@ -99,7 +100,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
             children: [
               GestureDetector(
                 onTap: () {
-                  _showhint("here is your hint");
+                  _showhint("here is your hint", context);
                 },
                 child: SvgPicture.asset("assets/images/hint.svg"),
               ),
@@ -117,7 +118,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
     );
   }
 
-  void _showhint(String message) {
+  void _showhint(String message, BuildContext context) {
     showDialog(
       context: context,
       builder: (context) {
