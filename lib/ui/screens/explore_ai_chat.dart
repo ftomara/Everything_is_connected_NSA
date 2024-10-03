@@ -1,3 +1,5 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:everything_is_connected_app/constant.dart';
 import 'package:everything_is_connected_app/core/utils/common_widgets/background_image.dart';
 import 'package:everything_is_connected_app/core/utils/common_widgets/linear_color.dart';
 import 'package:everything_is_connected_app/core/utils/common_widgets/messagetile.dart';
@@ -16,7 +18,11 @@ class ExploreAiChat extends StatefulWidget {
 }
 
 class _ExploreAiChatState extends State<ExploreAiChat> {
+  bool _aiThinking = false;
+  bool _showThinkingAnimation = false;
+  int? _thinkingMessageIndex;
   List<Content> history = [];
+  AnimatedTextKit? _thinkingAnimation;
   late final GenerativeModel _model;
   late final ChatSession _chat;
   final ScrollController _scrollController = ScrollController();
@@ -44,13 +50,27 @@ class _ExploreAiChatState extends State<ExploreAiChat> {
       apiKey: _apiKey,
     );
     _chat = _model.startChat();
+    _thinkingAnimation = AnimatedTextKit(
+      animatedTexts: [
+        TyperAnimatedText(
+          "Thinking...",
+          textStyle: TextStyle(
+            fontSize: 16,
+            color: defaultColor,
+          ),
+          speed: const Duration(milliseconds: 100),
+        ),
+      ],
+      repeatForever: true,
+    );
   }
 
+  @override
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return InfoScreen(
-      ontap: (){},
+      ontap: () {},
       close: true,
       arrow: false,
       list: [
@@ -70,9 +90,30 @@ class _ExploreAiChatState extends State<ExploreAiChat> {
                   .whereType<TextPart>()
                   .map<String>((e) => e.text)
                   .join('');
+
+              bool isLastMessage = index == 0;
+
+              if (_aiThinking && isLastMessage && _showThinkingAnimation) {
+                return Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SvgPicture.asset("assets/images/ai_avatar.svg"),
+                    Flexible(
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 13),
+                        child: _thinkingAnimation, // Use single instance
+                      ),
+                    ),
+                  ],
+                );
+              }
+
               return MessageTile(
                 sendByMe: content.role == 'user',
                 message: text,
+                isLastMessage: isLastMessage,
               );
             },
             separatorBuilder: (context, index) {
@@ -94,6 +135,7 @@ class _ExploreAiChatState extends State<ExploreAiChat> {
                 Expanded(
                   child: TextField(
                     controller: _textController,
+                    cursorColor: defaultColor,
                     autofocus: true,
                     focusNode: _textFieldFocus,
                     decoration: InputDecoration(
@@ -108,11 +150,8 @@ class _ExploreAiChatState extends State<ExploreAiChat> {
                         },
                         child: Container(
                           child: _loading
-                              ? const Padding(
-                                  padding: EdgeInsets.all(15.0),
-                                  child: CircularProgressIndicator.adaptive(
-                                    backgroundColor: Color(0xFFDFAB46),
-                                  ),
+                              ? CircularProgressIndicator.adaptive(
+                                  backgroundColor: Color(0xFFDFAB46),
                                 )
                               : SvgPicture.asset("assets/images/send_icon.svg"),
                         ),
@@ -127,13 +166,19 @@ class _ExploreAiChatState extends State<ExploreAiChat> {
                       hintStyle: const TextStyle(
                           color: Color.fromARGB(20, 255, 255, 255)),
                       filled: true,
-                      fillColor: Colors
-                          .transparent, // Transparent inside the TextField
+                      fillColor: Colors.transparent,
                       contentPadding: const EdgeInsets.symmetric(
                         horizontal: 15,
                         vertical: 15,
                       ),
                     ),
+                    onSubmitted: (value) {
+                      setState(() {
+                        history.add(
+                            Content('user', [TextPart(_textController.text)]));
+                      });
+                      _sendChatMessage(_textController.text, history.length)
+                    },
                   ),
                 ),
                 const SizedBox(
@@ -149,44 +194,58 @@ class _ExploreAiChatState extends State<ExploreAiChat> {
 
   Future<void> _sendChatMessage(String message, int historyIndex) async {
     setState(() {
-      _loading = true;
       _textController.clear();
       _textFieldFocus.unfocus();
       _scrollDown();
     });
+    if (_thinkingMessageIndex == null) {
+      setState(() {
+        _loading = true;
+        _aiThinking = true;
+        _showThinkingAnimation = true; // Start animation
+        history.add(Content('model', [TextPart("thinking...")]));
+        _thinkingMessageIndex =
+            history.length - 1; // Track the index of the thinking message
+      });
+    }
 
     List<Part> parts = [];
 
     try {
-      var response = _chat.sendMessageStream(
-        Content.text(message),
-      );
+      var response = _chat.sendMessageStream(Content.text(message));
+
+      // Collect the full response
       await for (var item in response) {
         var text = item.text;
+
         if (text == null) {
           _showError('No response from API.');
           return;
         } else {
-          setState(() {
-            _loading = false;
-            parts.add(TextPart(text));
-            if ((history.length - 1) == historyIndex) {
-              history.removeAt(historyIndex);
-            }
-            history.insert(historyIndex, Content('model', parts));
-          });
+          parts.add(TextPart(text));
         }
       }
+
+      // After collecting the full response, update the state
+      setState(() {
+        _loading = false;
+        if (_thinkingMessageIndex != null &&
+            _thinkingMessageIndex! < history.length) {
+          history
+              .removeAt(_thinkingMessageIndex!); // Remove the thinking message
+          _thinkingMessageIndex = null;
+        }
+
+        history.add(Content('model', parts)); // Add the AI's full response
+        _aiThinking = false; // Mark AI as not thinking anymore
+      });
     } catch (e, t) {
       print(e);
       print(t);
       _showError(e.toString());
       setState(() {
         _loading = false;
-      });
-    } finally {
-      setState(() {
-        _loading = false;
+        _aiThinking = false;
       });
     }
   }
