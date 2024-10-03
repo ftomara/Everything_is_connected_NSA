@@ -11,7 +11,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:video_player/video_player.dart';
 
 class ExploreInfoScreen extends StatefulWidget {
-  const ExploreInfoScreen({super.key, this.isVideo = false,required this.index});
+  const ExploreInfoScreen(
+      {super.key, this.isVideo = false, required this.index});
   final bool isVideo;
   final int index;
 
@@ -39,6 +40,7 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
     if (currentPage.info!.isNotEmpty &&
         _currentParagraphIndex < currentPage.info!.length - 1) {
       setState(() {
+        _currentImageIndex++;
         _currentParagraphIndex++;
       });
     }
@@ -57,6 +59,7 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
     // If there are paragraphs, scroll through them first
     if (currentPage.info!.isNotEmpty && _currentParagraphIndex > 0) {
       setState(() {
+        _currentImageIndex--;
         _currentParagraphIndex--;
       });
     }
@@ -91,6 +94,8 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
 
         // Use the data to access the current page
         final currentPage = pages[_currentImageIndex];
+        print(currentPage.imagepath);
+        print(_currentImageIndex);
         final bool hasParagraphs = currentPage.info!.isNotEmpty;
 
         return InfoScreen(
@@ -132,7 +137,8 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
                             Expanded(
                               flex: 4,
                               child: Text(
-                                currentPage.info![_currentParagraphIndex],
+                                currentPage.info!.join(
+                                    '\n'), // Join the list items with a newline character
                                 style: MyTextStyle.textStyle12.copyWith(
                                   fontSize: 18,
                                 ),

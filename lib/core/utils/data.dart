@@ -16,11 +16,11 @@ Future<List<Infomodel>> getAllEventInfo(int eventIndex) async {
     var event = map['event'];
 
     // Loop through the 'info' list in the event
-    for (var infoItem in event['info']) {
-      var imagePath = infoItem['url']; // Get image path from the JSON
+    for (int i = 0; i < event["info"].length; i++) {
+      var imagePath = event["info"][i]['url']; // Get image path from the JSON
       List<String> content =
-          List<String>.from(infoItem['content']); // Extract content
-
+          List<String>.from(event["info"][i]['content']); // Extract content
+      print(imagePath);
       // Create an Infomodel using the image path and the content
       pages.add(Infomodel(imagepath: imagePath, info: content));
     }
