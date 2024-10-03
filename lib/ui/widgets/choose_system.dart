@@ -18,7 +18,11 @@ class ChooseSystem extends StatelessWidget {
         !isMain
             ? (isExplore
                 ? Navigation.push(context, QuestionScreen())
-                : Navigation.push(context, ExploreInfoScreen()))
+                : Navigation.push(
+                    context,
+                    ExploreInfoScreen(
+                      index: 0,
+                    )))
             : null;
       },
       child: Stack(

@@ -1,0 +1,200 @@
+{
+    "maps": [
+      {
+        "event": {
+          "title": "Greenhouse Gases",
+          "icon": "assets/images/greenhouse_gases_icon.png",
+          "info": [
+            {
+              "isvideo": false,
+              "url": "assets/images/greenhouse_1.png",
+              "content": []
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/greenhouse_2.png",
+              "content": []
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/greenhouse_3.png",
+              "content": []
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/greenhouse_4.png",
+              "content": []
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/carbon_collage.jpg",
+              "content": [
+                "Examples for Gases That Contribute to the Greenhouse Effect:",
+                "1-Carbon Dioxide: CO2 is released through natural processes and through human activities,",
+                "such as burning fossil fuels and deforestation."
+              ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/2018VS2024.png",
+              "content": [
+                "Look at this map to see how carbon monoxide levels vary globally.",
+                "The compare feature on this map allows looking at the levels of CO on two different dates."
+              ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/2018VS2024.png",
+              "content": [
+                "2-Methane: After carbon dioxide (CO2), methane (CH4) is the most important greenhouse gas contributing to human-induced climate change.",
+                "Methane is responsible for 23% of the global warming produced by CO2, CH4, and N2O."
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "event": {
+          "title": "Ocean Acidification",
+          "icon": "assets/images/Ocean_Acidification_Icon.png",
+          "info": [
+            {
+              "isvideo": false,
+              "url": "assets/images/Acidification_process.svg",
+              "content": [
+                "An acid is a substance that can cause certain changes when it is combined with water or a metal. Acidity is the amount of acid in water."
+              ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/Ocean_Carbon_concentration.png",
+              "content": [
+                "As greenhouse gas concentrations rise, more carbon dioxide is absorbed by the oceans. This increased absorption not only drives global warming but also exacerbates ocean acidification.",
+                "Ocean acidification is a change in the properties of ocean water that can be harmful for plants and animals. Scientists have observed that the ocean is becoming more acidic as its water absorbs carbon dioxide from the atmosphere."
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "event": {
+          "title": "Marine Life",
+          "icon": "assets/images/Marine_life_icon.png",
+          "info": [
+            {
+              "isvideo": false,
+              "url": "assets/images/bleached&not_bleached.png",
+              "content": [
+                "Ocean acidification, caused by increased carbon dioxide absorption by the ocean, significantly harms marine life by altering water chemistry. Many marine species struggle to adapt to the rapidly changing pH levels, threatening the ocean's biodiversity and the entire food web."
+              ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/Marine.png",
+              "content": [
+                "Coral Reefs: Corals, which rely on carbonate ions to build their exoskeletons, suffer from weaker, thinner skeletons in acidic waters. They are very sensitive to light and temperature.",
+                "If the water they live in gets too hot, they might not survive.",
+                "If coral reefs are under too much stress, like in these conditions, they can eject the algae living on them and turn completely white. This is known as coral bleaching."
+              ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/clownfish.png",
+              "content": [
+                "Fish: Acidic water affects fish behavior, with some species like clownfish losing their ability to detect predators,",
+                "and others experiencing high mortality rates during early life stages.",
+                "Fish shoals also struggle to coordinate, increasing vulnerability to predators."
+              ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/Sea_Star.png",
+              "content": [
+                "Oysters, Mussels, Urchins, and Starfish: Calcifying animals like oysters and mussels have difficulty forming their shells,",
+                "leading to high mortality, especially in larvae. Shell composition in mussels is weakening, and ocean acidification impairs sea urchin growth and reproduction.",
+                "Some starfish, like crown of thorns, may benefit by finding their food more accessible, but this could worsen coral reef damage."
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "event": {
+          "title": "Air Quality",
+          "icon": "assets/images/Air_Quality_Icon.png",
+          "info": [
+            {
+              "isvideo": false,
+              "url": "assets/images/Air_Quality_Icon.png",
+              "content": [
+                "Smoke from wildfires contains a noxious mix of chemicals that affects not only air quality and health,",
+                "but also damages plants, ecosystems, and crops, leading to more carbon emissions and thus more greenhouse gases in the atmosphere, says Dr. Lorenzo Labrador."
+              ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/NO2_map.png",
+              "content": [
+                "Nitrogen dioxide (NO2) is a pollutant, the primary sources of which are automobile exhaust, smoke from industry, and the burning of fossil fuels.",
+                "If breathed in, NO2 can aggravate respiratory conditions such as asthma. Long-term exposure can lead to the development of asthma and potentially increase susceptibility to respiratory infections.",
+                "NO2 reacts with other chemicals in the atmosphere, forming particulate matter and ozone, producing haze and acid rain, and contributing to nitrogen pollution in coastal waters."
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "event": {
+          "title": "Ice Melting",
+          "icon": "assets/images/ice_icon.jpg.webp",
+          "info": [
+            {
+              "isvideo": true,
+              "url": "assets/images/Ice_Sheets.mp4",
+              "content": [
+                "Ice sheets influence weather and climate. Large high-altitude plateaus on the ice sheets alter storm tracks and create cold downslope winds close to the ice surface.",
+                "Known as katabatic winds, these downslope winds occur when the higher altitudes radiate heat and are cooled.",
+                "As the air cools, it becomes denser. Gravity does the rest by pulling this denser air downhill."
+              ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/interaction_ice_sheet.jpg",
+              "content": [
+                "The amount of snow and ice that covers the Earth's land and ocean changes with latitude, altitude, and the seasons.",
+                "Over the last century average snowfall and global ice cover has decreased in many regions due to rising average temperatures caused by the release of greenhouse gases.",
+                "The decrease in snow and ice cover is changing ecosystems and affecting our climate system.",
+                "Melting ice sheets also reduce the ocean's salinity, or salt content. Tons of freshwater are added to the ocean every day by melting ice sheets.",
+                "Large additions of freshwater change the ocean ecosystems. Organisms, such as many types of corals, depend on saltwater for survival.",
+                "Some corals may not be able to adjust to a more freshwater habitat."
+              ]
+            },
+            {
+              "isvideo": true,
+              "url": "assets/images/antartica_change.mp4",
+              "content": [
+                "Antarctica is losing ice mass (melting) at an average rate of about 150 billion tons per year, and Greenland is losing about 270 billion tons per year, adding to sea level rise.",
+                "This is important because the ice sheets of Greenland and Antarctica store about two-thirds of all the fresh water on Earth.",
+                "They are losing ice due to the ongoing warming of Earth's surface and ocean.",
+                "Meltwater coming from these ice sheets is responsible for about one-third of the global average rise in sea level since 1993."
+              ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/ant_graph.png",
+              "content": []
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/greenland.mp4",
+              "content": [
+                "The Greenland ice sheet's mass has rapidly declined in the last several years due to surface melting and iceberg calving.",
+                "Research based on satellite data indicates that between 2002 and 2023, Greenland shed an average of 270 billion metric tons of ice per year, adding to global sea level rise."
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+  

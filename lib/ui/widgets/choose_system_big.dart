@@ -34,7 +34,7 @@ class ChooseSystemBig extends StatelessWidget {
         Positioned(
           top: 57.h,
           // left: -3.5.w,
-          right:-5.w,
+          right: -5.w,
           child: Stack(
             alignment: Alignment.center,
             children: [
@@ -42,7 +42,7 @@ class ChooseSystemBig extends StatelessWidget {
                 alignment: Alignment.center,
                 child: SvgPicture.asset(
                   "assets/images/HexTech_Glod.svg",
-                  width: 20, 
+                  width: 20,
                   height: 20,
                   fit: BoxFit.contain,
                 ),

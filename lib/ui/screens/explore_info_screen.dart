@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:everything_is_connected_app/core/utils/data.dart';
 import 'package:everything_is_connected_app/core/utils/my_text_style.dart';
 import 'package:everything_is_connected_app/model/infomodel.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_ai_chat.dart';
@@ -10,8 +11,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:video_player/video_player.dart';
 
 class ExploreInfoScreen extends StatefulWidget {
-  const ExploreInfoScreen({super.key, this.isVideo = false});
+  const ExploreInfoScreen({super.key, this.isVideo = false,required this.index});
   final bool isVideo;
+  final int index;
+
   @override
   State<ExploreInfoScreen> createState() => _ExploreInfoScreenState();
 }
@@ -21,33 +24,16 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
   int _currentImageIndex = 0;
   int _currentParagraphIndex = 0;
 
-  final _pages = [
-    Infomodel(imagepath: 'assets/images/seaice.png', info: [
-      '''Shrinking Arctic Ice: Arctic sea ice is rapidly melting, particularly during the summer, with its extent shrinking every year.
-Reflective Ice Loss: The loss of Arctic sea ice reduces Earth’s ability to reflect sunlight, which accelerates global warming.
-September Minimum: By 2100, Arctic sea ice could almost completely disappear during the summer months if greenhouse gas emissions remain high.''',
-      '''The loss of Arctic sea ice reduces Earth’s ability to reflect sunlight, which accelerates global warming.
-September Minimum: By 2100, Arctic sea ice could almost completely disappear during the summer months if greenhouse gas emissions remain high.''',
-    ]),
-    Infomodel(imagepath: "assets/images/greenhouse.png"),
-    Infomodel(imagepath: 'assets/images/last.png', info: [
-      '''1. Carbon Dioxide (CO₂): Released from burning fossil fuels and deforestation, it's a primary driver of global warming.
-2. Methane (CH₄): A potent greenhouse gas from agriculture and fossil fuel extraction, trapping more heat than CO₂.
-3. Nitrous Oxide (N₂O): Emitted from agriculture and fossil fuels, it has a long atmospheric lifespan and contributes significantly to warming.
-4. Chlorofluorocarbons (CFCs): Industrial chemicals that trap heat and contribute to both ozone depletion and climate change.''',
-    ])
-  ];
-
   @override
   void initState() {
+    super.initState();
     flickManager = FlickManager(
         videoPlayerController: VideoPlayerController.networkUrl(Uri.parse(
             "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4")));
-    super.initState();
   }
 
-  void _onArrowTap() {
-    final currentPage = _pages[_currentImageIndex];
+  void _onArrowTap(List<Infomodel> pages) {
+    final currentPage = pages[_currentImageIndex];
 
     // If there are paragraphs, scroll through them first
     if (currentPage.info!.isNotEmpty &&
@@ -57,7 +43,7 @@ September Minimum: By 2100, Arctic sea ice could almost completely disappear dur
       });
     }
     // Move to the next image if we're at the end of the info
-    else if (_currentImageIndex < _pages.length - 1) {
+    else if (_currentImageIndex < pages.length - 1) {
       setState(() {
         _currentImageIndex++;
         _currentParagraphIndex = 0; // Reset paragraph index for new image
@@ -65,8 +51,8 @@ September Minimum: By 2100, Arctic sea ice could almost completely disappear dur
     }
   }
 
-  void _onArrowTapBack() {
-    final currentPage = _pages[_currentImageIndex];
+  void _onArrowTapBack(List<Infomodel> pages) {
+    final currentPage = pages[_currentImageIndex];
 
     // If there are paragraphs, scroll through them first
     if (currentPage.info!.isNotEmpty && _currentParagraphIndex > 0) {
@@ -74,13 +60,13 @@ September Minimum: By 2100, Arctic sea ice could almost completely disappear dur
         _currentParagraphIndex--;
       });
     }
-    // Move to the next image if we're at the end of the info
+    // Move to the previous image if we're at the beginning of the info
     else if (_currentImageIndex > 0) {
       setState(() {
         _currentImageIndex--;
-        _currentParagraphIndex = _pages[_currentImageIndex].info!.isNotEmpty
-            ? _pages[_currentImageIndex].info!.length -
-                1 // Go to the last paragraph of the previous image
+        _currentParagraphIndex = pages[_currentImageIndex].info!.isNotEmpty
+            ? pages[_currentImageIndex].info!.length -
+                1 // Go to last paragraph of the previous image
             : 0; // If there are no paragraphs, reset to 0
       });
     }
@@ -88,139 +74,118 @@ September Minimum: By 2100, Arctic sea ice could almost completely disappear dur
 
   @override
   Widget build(BuildContext context) {
-    final currentPage = _pages[_currentImageIndex];
-    final bool hasParagraphs = currentPage.info!.isNotEmpty;
+    return FutureBuilder<List<Infomodel>>(
+      future: getAllEventInfo(0), // Fetch the data
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(
+              child: CircularProgressIndicator()); // Show loading spinner
+        } else if (snapshot.hasError) {
+          return Center(
+              child: Text("Error: ${snapshot.error}")); // Handle error
+        } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          return Center(child: Text("No data found")); // Handle no data
+        }
 
-    return InfoScreen(
-      arrowback: _currentImageIndex > 0 || _currentParagraphIndex > 0,
-      ontapback: _onArrowTapBack,
-      ontap: _onArrowTap, // Passing the ontap function
-      close: true,
-      arrow: _currentImageIndex < _pages.length - 1,
-      list: [
-        Positioned(
-          left: 1.w,
-          top: 6.dg,
-          child: 
-          SizedBox(
-            width: 285.w,
-            height: 380.h,
-            child: Center(
-              child: hasParagraphs
-                  ? Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      // crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 24.w,
-                        ),
-                        widget.isVideo == true
-                            ? Center(
-                                child: SizedBox(
-                                  width: 120.w,
-                                  height: 200.h,
-                                  child: FlickVideoPlayer(
-                                    flickManager: flickManager,
+        final List<Infomodel> pages = snapshot.data!; // Get the data
+
+        // Use the data to access the current page
+        final currentPage = pages[_currentImageIndex];
+        final bool hasParagraphs = currentPage.info!.isNotEmpty;
+
+        return InfoScreen(
+          arrowback: _currentImageIndex > 0 || _currentParagraphIndex > 0,
+          ontapback: () => _onArrowTapBack(pages),
+          ontap: () => _onArrowTap(pages), // Pass the pages to the tap function
+          close: true,
+          arrow: _currentImageIndex < pages.length - 1,
+          list: [
+            Positioned(
+              left: 1.w,
+              top: 6.dg,
+              child: SizedBox(
+                width: 285.w,
+                height: 380.h,
+                child: Center(
+                  child: hasParagraphs
+                      ? Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(width: 24.w),
+                            widget.isVideo
+                                ? Center(
+                                    child: SizedBox(
+                                      width: 120.w,
+                                      height: 200.h,
+                                      child: FlickVideoPlayer(
+                                        flickManager: flickManager,
+                                      ),
+                                    ),
+                                  )
+                                : Image.asset(
+                                    currentPage.imagepath ?? "",
+                                    fit: BoxFit.contain,
+                                    width: 120.w,
+                                    height: 200.h,
                                   ),
+                            SizedBox(width: 8),
+                            Expanded(
+                              flex: 4,
+                              child: Text(
+                                currentPage.info![_currentParagraphIndex],
+                                style: MyTextStyle.textStyle12.copyWith(
+                                  fontSize: 18,
                                 ),
-                              )
-                            : Image.asset(
-                                currentPage.imagepath ?? "",
-                                fit: BoxFit.contain,
-                                width: 120.w,
-                                height: 200.h,
+                                textAlign: TextAlign.left,
                               ),
-                        SizedBox(width: 8),
-                        Expanded(
-                          flex: 4,
-                          child: Text(
-                            currentPage.info![_currentParagraphIndex],
-                            style: MyTextStyle.textStyle12.copyWith(
-                              fontSize: 18,
                             ),
-                            textAlign: TextAlign.left,
+                            SizedBox(width: 36.w),
+                          ],
+                        )
+                      : Center(
+                          child: Image.asset(
+                            currentPage.imagepath ?? "",
+                            fit: BoxFit.contain,
+                            width: double.infinity,
+                            height: double.infinity,
                           ),
                         ),
-                        SizedBox(width: 36.w), // Adjust this spacing as needed
-                      ],
-                    )
-
-                  // Column(
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     crossAxisAlignment: CrossAxisAlignment.center,
-                  //     children: [
-                  //       widget.isVideo == true
-                  //           ? Center(
-                  //             child: SizedBox(
-                  //                 width: 120.w,
-                  //                 height: 200.h,
-                  //                 child: FlickVideoPlayer(
-                  //                   flickManager: flickManager,
-                  //                 ),
-                  //               ),
-                  //           )
-                  //           : Image.asset(
-                  //               currentPage.imagepath ?? "",
-                  //               fit: BoxFit.contain,
-                  //               width: 200.w,
-                  //               height: 200.h,
-                  //             ),
-                  //       SizedBox(height: 16),
-                  //       Padding(
-                  //         padding: const EdgeInsets.symmetric(
-                  //             horizontal: 16.0 , vertical : 12), // Set padding here
-                  //         child: Text(
-                  //           currentPage.info![_currentParagraphIndex],
-                  //           style: MyTextStyle.textStyle12.copyWith(
-                  //             fontSize: 18,
-                  //           ),
-                  //           textAlign: TextAlign.left,
-                  //         ),
-                  //       ),
-                  //       SizedBox(height: 20),
-                  //     ],
-                  //   )
-                  : Center(
-                      child: Image.asset(
-                        currentPage.imagepath ?? "",
-                        fit: BoxFit.contain,
-                        width: double.infinity,
-                        height: double.infinity,
-                      ),
-                    ),
-            ),
-          ),
-        ),
-        Positioned(
-          bottom: 24,
-          left: 20,
-          child: Row(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ExploreAiChat(),
-                    ),
-                  );
-                },
-                child: SvgPicture.asset("assets/images/ai_avatar.svg"),
+                ),
               ),
-              SizedBox(width: 4.w),
-              AnimatedTextKit(
-                animatedTexts: [
-                  TyperAnimatedText(
-                    "Need to Know More? Let's Have a Chat!",
-                    textStyle: MyTextStyle.textStyle12.copyWith(fontSize: 24),
+            ),
+            Positioned(
+              bottom: 24,
+              left: 20,
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ExploreAiChat(),
+                        ),
+                      );
+                    },
+                    child: SvgPicture.asset("assets/images/ai_avatar.svg"),
+                  ),
+                  SizedBox(width: 4.w),
+                  AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText(
+                        "Need to Know More? Let's Have a Chat!",
+                        textStyle:
+                            MyTextStyle.textStyle12.copyWith(fontSize: 24),
+                      ),
+                    ],
+                    isRepeatingAnimation: false,
                   ),
                 ],
-                isRepeatingAnimation: false,
               ),
-            ],
-          ),
-        ),
-      ],
+            ),
+          ],
+        );
+      },
     );
   }
 }

@@ -5,7 +5,7 @@ import 'package:gradient_borders/input_borders/gradient_outline_input_border.dar
 
 // ignore: must_be_immutable
 class Answerbtn extends StatefulWidget {
-  Answerbtn({super.key, required this.text , this.ontap});
+  Answerbtn({super.key, required this.text, this.ontap});
   String text = '';
   final Function()? ontap;
 
@@ -19,7 +19,7 @@ class _AnswerbtnState extends State<Answerbtn> {
     return InkWell(
       onTap: widget.ontap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16,vertical: 8),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
           border: GradientBoxBorder(
             gradient: LinearGradient(
@@ -30,7 +30,8 @@ class _AnswerbtnState extends State<Answerbtn> {
           ),
         ),
         child: Center(
-          child: Text(widget.text,style: MyTextStyle.textStyle12.copyWith(fontSize: 20)),
+          child: Text(widget.text,
+              style: MyTextStyle.textStyle12.copyWith(fontSize: 20)),
         ),
       ),
     );

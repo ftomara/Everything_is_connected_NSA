@@ -26,11 +26,11 @@ class MessageTile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (!sendByMe)
-              SvgPicture.asset("assets/images/ai_avatar.svg"),
+            if (!sendByMe) SvgPicture.asset("assets/images/ai_avatar.svg"),
             Flexible(
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 13),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 13),
                 decoration: BoxDecoration(
                   color: sendByMe
                       ? const Color.fromARGB(255, 14, 60, 80)
@@ -49,14 +49,17 @@ class MessageTile extends StatelessWidget {
                         ),
                       )
                     : isLastMessage
-                        ? AnimatedMarkdownText(message: message)  // Animate the last message
-                        : MarkdownBody(                       // Display previous messages statically
+                        ? AnimatedMarkdownText(
+                            message: message) // Animate the last message
+                        : MarkdownBody(
+                            // Display previous messages statically
                             data: message,
                             extensionSet: md.ExtensionSet(
                               md.ExtensionSet.gitHubFlavored.blockSyntaxes,
                               <md.InlineSyntax>[
                                 md.EmojiSyntax(),
-                                ...md.ExtensionSet.gitHubFlavored.inlineSyntaxes,
+                                ...md
+                                    .ExtensionSet.gitHubFlavored.inlineSyntaxes,
                               ],
                             ),
                           ),

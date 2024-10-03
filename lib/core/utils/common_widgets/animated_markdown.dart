@@ -29,14 +29,13 @@ class _AnimatedMarkdownTextState extends State<AnimatedMarkdownText> {
       setState(() {
         _displayedText += _messageParts[i] + ' ';
       });
-      await Future.delayed(const Duration(milliseconds: 30)); 
+      await Future.delayed(const Duration(milliseconds: 30));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return MarkdownBody(
-      
       data: _displayedText,
       extensionSet: md.ExtensionSet(
         md.ExtensionSet.gitHubFlavored.blockSyntaxes,

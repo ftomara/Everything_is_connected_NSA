@@ -66,7 +66,9 @@ class ExploreScreen extends StatelessWidget {
                                 width: svgWidth,
                               ),
                               Positioned(
-                                  left: 16.w, top: 90.h, child: ChooseSystem()),
+                                  left: 16.w, top: 90.h, child: ChooseSystem(
+                                    
+                                  )),
                               Positioned(
                                   left: 109.w,
                                   top: 90.h,

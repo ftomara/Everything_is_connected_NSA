@@ -77,7 +77,7 @@ class MainScreen extends StatelessWidget {
                           top: -20.h,
                           child: CategoryButton(
                             onTap: () {
-                              systemDialogue("Geosphere", "ok", context);
+                              systemDialogue("ok", "ok", context);
                             },
                             text: "Geosphere",
                           ),

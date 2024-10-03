@@ -58,6 +58,7 @@ class InvetigateScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           clipBehavior: Clip.none,
                           children: [
+                      
                             SvgPicture.asset(
                               "assets/images/board_frame.svg",
                             ),
