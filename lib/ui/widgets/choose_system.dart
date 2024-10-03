@@ -1,11 +1,15 @@
+import 'package:everything_is_connected_app/core/utils/common_widgets/navigation.dart';
+import 'package:everything_is_connected_app/ui/screens/explore_info_screen.dart';
+import 'package:everything_is_connected_app/ui/screens/info_screen.dart';
+import 'package:everything_is_connected_app/ui/screens/question_screen.dart';
 import 'package:everything_is_connected_app/ui/widgets/choose_system_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ChooseSystem extends StatelessWidget {
-  const ChooseSystem({super.key});
-
+  const ChooseSystem({super.key, this.isExplore = false});
+  final bool isExplore;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -31,7 +35,11 @@ class ChooseSystem extends StatelessWidget {
         Positioned(
             top: 65.h,
             child: ChooseSystemButton(
-              onTap: () {},
+              onTap: () {
+                isExplore
+                    ? Navigation.push(context, QuestionScreen())
+                    : Navigation.push(context, ExploreInfoScreen());
+              },
               text: "dddd",
             )),
       ],

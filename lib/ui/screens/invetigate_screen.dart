@@ -60,21 +60,21 @@ class InvetigateScreen extends StatelessWidget {
                               "assets/images/board_frame.svg",
                             ),
                             Positioned(
-                                left: 16.w, top: 94.h, child: ChooseSystem()),
+                                left: 16.w, top: 94.h, child: ChooseSystem(isExplore: true,)),
                             Positioned(
-                                left: 109.w, top: 94.h, child: ChooseSystem()),
+                                left: 109.w, top: 94.h, child: ChooseSystem(isExplore: true,)),
                             Positioned(
-                                left: 170.w, top: 94.h, child: ChooseSystem()),
+                                left: 170.w, top: 94.h, child: ChooseSystem(isExplore: true,)),
                             Positioned(
-                                left: 67.w, top: 183.h, child: ChooseSystem()),
+                                left: 67.w, top: 183.h, child: ChooseSystem(isExplore: true,)),
                             Positioned(
-                                left: 16.w, top: 300.h, child: ChooseSystem()),
+                                left: 16.w, top: 300.h, child: ChooseSystem(isExplore: true,)),
                             Positioned(
-                                left: 109.w, top: 300.h, child: ChooseSystem()),
+                                left: 109.w, top: 300.h, child: ChooseSystem(isExplore: true,)),
                             Positioned(
-                                left: 170.w, top: 260.h, child: ChooseSystem()),
+                                left: 170.w, top: 260.h, child: ChooseSystem(isExplore: true,)),
                             Positioned(
-                                left: 220.w, top: 170.h, child: ChooseSystem()),
+                                left: 220.w, top: 170.h, child: ChooseSystem(isExplore: true,)),
                           ],
                         );
                       }),

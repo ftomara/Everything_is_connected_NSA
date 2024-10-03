@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         // home: MainScreen(),
         // home: ExploreAiChat(),
         // home: ExploreInfoScreen(),
-        home: QuestionScreen(),
+        home: MainScreen()
       ),
     );
   }

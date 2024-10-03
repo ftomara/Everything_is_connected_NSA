@@ -3,18 +3,21 @@ import 'package:everything_is_connected_app/core/utils/my_text_style.dart';
 import 'package:everything_is_connected_app/model/infomodel.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_ai_chat.dart';
 import 'package:everything_is_connected_app/ui/screens/info_screen.dart';
+import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:video_player/video_player.dart';
 
 class ExploreInfoScreen extends StatefulWidget {
-  const ExploreInfoScreen({super.key});
-
+  const ExploreInfoScreen({super.key, this.isVideo = false});
+  final bool isVideo;
   @override
   State<ExploreInfoScreen> createState() => _ExploreInfoScreenState();
 }
 
 class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
+  late FlickManager flickManager;
   int _currentImageIndex = 0;
   int _currentParagraphIndex = 0;
 
@@ -23,8 +26,8 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
       '''Shrinking Arctic Ice: Arctic sea ice is rapidly melting, particularly during the summer, with its extent shrinking every year.
 Reflective Ice Loss: The loss of Arctic sea ice reduces Earth’s ability to reflect sunlight, which accelerates global warming.
 September Minimum: By 2100, Arctic sea ice could almost completely disappear during the summer months if greenhouse gas emissions remain high.''',
-      '''The loss of Arctic sea ice reduces Earth’s ability to reflect sunlight, which accelerates global warming.
-September Minimum: By 2100, Arctic sea ice could almost completely disappear during the summer months if greenhouse gas emissions remain high.''',
+      '''The loss ofdddddddddddddddddddddddddddddddddddddddddddddd Arctic sea ice reduces Earth’s ability to reflect sunlight, which accelerates global warming.
+September Minimum: By 2100, Arctic srrrrrrrrrrrrrrrrrrrrrrrrrrrrrrea ice could almost completely disappear during the summer months if greenhouse gas emissions remain high.''',
     ]),
     Infomodel(imagepath: "assets/images/greenhouse.png"),
     Infomodel(imagepath: 'assets/images/last.png', info: [
@@ -34,6 +37,14 @@ September Minimum: By 2100, Arctic sea ice could almost completely disappear dur
 4. Chlorofluorocarbons (CFCs): Industrial chemicals that trap heat and contribute to both ozone depletion and climate change.''',
     ])
   ];
+
+  @override
+  void initState() {
+    flickManager = FlickManager(
+        videoPlayerController: VideoPlayerController.networkUrl(Uri.parse(
+            "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4")));
+    super.initState();
+  }
 
   void _onArrowTap() {
     final currentPage = _pages[_currentImageIndex];
@@ -85,35 +96,43 @@ September Minimum: By 2100, Arctic sea ice could almost completely disappear dur
       ontapback: _onArrowTapBack,
       ontap: _onArrowTap, // Passing the ontap function
       close: true,
-      arrow: _currentImageIndex < _pages.length-1,
+      arrow: _currentImageIndex < _pages.length - 1,
       list: [
         Positioned(
-          left: 8.dg,
+          left: 1.w,
           top: 6.dg,
           child: SizedBox(
-            // margin: EdgeInsets.symmetric(horizontal: 12),
-            // padding: EdgeInsets.symmetric(horizontal: 8),
-            // color: Colors.red[100],
-            width: 285.w,
+            width: 285
+                .w, // Control the overall width of the entire widget (optional)
             height: 380.h,
             child: Center(
               child: hasParagraphs
                   ? Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          currentPage.imagepath ?? "",
-                          fit: BoxFit.contain,
-                          width: 200.w,
-                          height: 200.h,
-                        ),
+                        widget.isVideo == true
+                            ? SizedBox(
+                                width: 90.w,
+                                height: 200.h,
+                                child: FlickVideoPlayer(
+                                  flickManager: flickManager,
+                                ),
+                              )
+                            : Image.asset(
+                                currentPage.imagepath ?? "",
+                                fit: BoxFit.contain,
+                                width: 200.w,
+                                height: 200.h,
+                              ),
                         SizedBox(height: 16),
                         Padding(
-                          padding: const EdgeInsets.only(left: 24),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0), // Set padding here
                           child: Text(
                             currentPage.info![_currentParagraphIndex],
-                            style:
-                                MyTextStyle.textStyle12.copyWith(fontSize: 18),
+                            style: MyTextStyle.textStyle12.copyWith(
+                              fontSize: 18,
+                            ),
                             textAlign: TextAlign.left,
                           ),
                         ),
