@@ -177,7 +177,7 @@ class _ExploreAiChatState extends State<ExploreAiChat> {
                         history.add(
                             Content('user', [TextPart(_textController.text)]));
                       });
-                      _sendChatMessage(_textController.text, history.length)
+                      _sendChatMessage(_textController.text, history.length);
                     },
                   ),
                 ),
