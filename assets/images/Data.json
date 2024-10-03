@@ -26,8 +26,8 @@
               "content": []
             },
             {
-              "isvideo": false,
-              "url": "assets/images/carbon_collage.jpg",
+              "isvideo": true,
+              "url": "assets/images/gris_with_vel_i_200204-202311_1080p25.mp4",
               "content": [
                 "Examples for Gases That Contribute to the Greenhouse Effect:",
                 "1-Carbon Dioxide: CO2 is released through natural processes and through human activities,",
@@ -44,7 +44,7 @@
             },
             {
               "isvideo": false,
-              "url": "assets/images/2018VS2024.png",
+              "url": "assets/images/Methane_Collage.png",
               "content": [
                 "2-Methane: After carbon dioxide (CO2), methane (CH4) is the most important greenhouse gas contributing to human-induced climate change.",
                 "Methane is responsible for 23% of the global warming produced by CO2, CH4, and N2O."

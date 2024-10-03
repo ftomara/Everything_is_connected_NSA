@@ -117,7 +117,7 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(width: 24.w),
-                            widget.isVideo
+                          currentPage.isVideo!
                                 ? Center(
                                     child: SizedBox(
                                       width: 120.w,

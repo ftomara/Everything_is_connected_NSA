@@ -21,8 +21,9 @@ Future<List<Infomodel>> getAllEventInfo(int eventIndex) async {
       List<String> content =
           List<String>.from(event["info"][i]['content']); // Extract content
       print(imagePath);
+    var isVideo = event["info"][i]["isvideo"]; 
       // Create an Infomodel using the image path and the content
-      pages.add(Infomodel(imagepath: imagePath, info: content));
+      pages.add(Infomodel(imagepath: imagePath, info: content,isVideo:isVideo ));
     }
   } else {
     print("Event index out of range.");
