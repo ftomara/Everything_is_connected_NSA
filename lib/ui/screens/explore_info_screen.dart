@@ -26,8 +26,8 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
       '''Shrinking Arctic Ice: Arctic sea ice is rapidly melting, particularly during the summer, with its extent shrinking every year.
 Reflective Ice Loss: The loss of Arctic sea ice reduces Earth’s ability to reflect sunlight, which accelerates global warming.
 September Minimum: By 2100, Arctic sea ice could almost completely disappear during the summer months if greenhouse gas emissions remain high.''',
-      '''The loss ofdddddddddddddddddddddddddddddddddddddddddddddd Arctic sea ice reduces Earth’s ability to reflect sunlight, which accelerates global warming.
-September Minimum: By 2100, Arctic srrrrrrrrrrrrrrrrrrrrrrrrrrrrrrea ice could almost completely disappear during the summer months if greenhouse gas emissions remain high.''',
+      '''The loss of Arctic sea ice reduces Earth’s ability to reflect sunlight, which accelerates global warming.
+September Minimum: By 2100, Arctic sea ice could almost completely disappear during the summer months if greenhouse gas emissions remain high.''',
     ]),
     Infomodel(imagepath: "assets/images/greenhouse.png"),
     Infomodel(imagepath: 'assets/images/last.png', info: [
