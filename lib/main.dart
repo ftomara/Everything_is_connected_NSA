@@ -5,6 +5,7 @@ import 'package:everything_is_connected_app/ui/screens/category_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_ai_chat.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_info_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/main_screen.dart';
+import 'package:everything_is_connected_app/ui/screens/question_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
         ),
         // home: MainScreen(),
         // home: ExploreAiChat(),
-        home: ExploreInfoScreen(),
+        // home: ExploreInfoScreen(),
+        home: QuestionScreen(),
       ),
     );
   }
