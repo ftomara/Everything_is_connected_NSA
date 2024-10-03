@@ -10,10 +10,16 @@ class InfoScreen extends StatefulWidget {
       {super.key,
       required this.close,
       required this.arrow,
-      required this.list});
+      this.arrowback,
+      required this.list,
+      required this.ontap,
+      this.ontapback});
   bool arrow = true;
+  bool? arrowback = false;
   bool close = false;
   List<Widget> list = [];
+  final Function() ontap;
+  final Function()? ontapback;
 
   @override
   State<InfoScreen> createState() => _InfoScreenState();
@@ -25,6 +31,15 @@ class _InfoScreenState extends State<InfoScreen> {
     return Scaffold(
       body: BackgroundImage(
         child: Stack(children: [
+          Positioned(
+            left: 12.w,
+            top: 100.w,
+            child: (widget.arrowback != null && widget.arrowback == true)
+                ? AnimatedArrow(
+                    ontap: widget.ontapback!,
+                  )
+                : SizedBox.shrink(),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -72,13 +87,13 @@ class _InfoScreenState extends State<InfoScreen> {
                   height: 225.h,
                 ),
                 widget.arrow
-                    ?  Transform(
-                            alignment: Alignment.center,
-                            transform:
-                                Matrix4.rotationY(3.14159), 
-                            child: AnimatedArrow(ontap: (){},),
-                          )
-                  
+                    ? Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.rotationY(3.14159),
+                        child: AnimatedArrow(
+                          ontap: widget.ontap,
+                        ),
+                      )
                     : SizedBox.shrink(),
               ],
             ),

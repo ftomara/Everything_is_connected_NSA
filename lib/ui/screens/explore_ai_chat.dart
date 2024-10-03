@@ -50,6 +50,7 @@ class _ExploreAiChatState extends State<ExploreAiChat> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return InfoScreen(
+      ontap: (){},
       close: true,
       arrow: false,
       list: [
