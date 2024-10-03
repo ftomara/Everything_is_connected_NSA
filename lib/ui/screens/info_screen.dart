@@ -33,7 +33,7 @@ class _InfoScreenState extends State<InfoScreen> {
         child: Stack(children: [
           Positioned(
             left: 12.w,
-            top: 100.w,
+            top: 90.w,
             child: (widget.arrowback != null && widget.arrowback == true)
                 ? AnimatedArrow(
                     ontap: widget.ontapback!,

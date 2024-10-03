@@ -101,33 +101,38 @@ September Minimum: By 2100, Arctic sea ice could almost completely disappear dur
         Positioned(
           left: 1.w,
           top: 6.dg,
-          child: SizedBox(
-            width: 285
-                .w, // Control the overall width of the entire widget (optional)
+          child: 
+          SizedBox(
+            width: 285.w,
             height: 380.h,
             child: Center(
               child: hasParagraphs
-                  ? Column(
+                  ? Row(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      // crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        SizedBox(
+                          width: 24.w,
+                        ),
                         widget.isVideo == true
-                            ? SizedBox(
-                                width: 90.w,
-                                height: 200.h,
-                                child: FlickVideoPlayer(
-                                  flickManager: flickManager,
+                            ? Center(
+                                child: SizedBox(
+                                  width: 120.w,
+                                  height: 200.h,
+                                  child: FlickVideoPlayer(
+                                    flickManager: flickManager,
+                                  ),
                                 ),
                               )
                             : Image.asset(
                                 currentPage.imagepath ?? "",
                                 fit: BoxFit.contain,
-                                width: 200.w,
+                                width: 120.w,
                                 height: 200.h,
                               ),
-                        SizedBox(height: 16),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16.0), // Set padding here
+                        SizedBox(width: 8),
+                        Expanded(
+                          flex: 4,
                           child: Text(
                             currentPage.info![_currentParagraphIndex],
                             style: MyTextStyle.textStyle12.copyWith(
@@ -136,9 +141,45 @@ September Minimum: By 2100, Arctic sea ice could almost completely disappear dur
                             textAlign: TextAlign.left,
                           ),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(width: 36.w), // Adjust this spacing as needed
                       ],
                     )
+
+                  // Column(
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     crossAxisAlignment: CrossAxisAlignment.center,
+                  //     children: [
+                  //       widget.isVideo == true
+                  //           ? Center(
+                  //             child: SizedBox(
+                  //                 width: 120.w,
+                  //                 height: 200.h,
+                  //                 child: FlickVideoPlayer(
+                  //                   flickManager: flickManager,
+                  //                 ),
+                  //               ),
+                  //           )
+                  //           : Image.asset(
+                  //               currentPage.imagepath ?? "",
+                  //               fit: BoxFit.contain,
+                  //               width: 200.w,
+                  //               height: 200.h,
+                  //             ),
+                  //       SizedBox(height: 16),
+                  //       Padding(
+                  //         padding: const EdgeInsets.symmetric(
+                  //             horizontal: 16.0 , vertical : 12), // Set padding here
+                  //         child: Text(
+                  //           currentPage.info![_currentParagraphIndex],
+                  //           style: MyTextStyle.textStyle12.copyWith(
+                  //             fontSize: 18,
+                  //           ),
+                  //           textAlign: TextAlign.left,
+                  //         ),
+                  //       ),
+                  //       SizedBox(height: 20),
+                  //     ],
+                  //   )
                   : Center(
                       child: Image.asset(
                         currentPage.imagepath ?? "",
@@ -167,12 +208,15 @@ September Minimum: By 2100, Arctic sea ice could almost completely disappear dur
                 child: SvgPicture.asset("assets/images/ai_avatar.svg"),
               ),
               SizedBox(width: 4.w),
-              AnimatedTextKit(animatedTexts: [
-                TyperAnimatedText(
-                  "Need to Know More? Let's Have a Chat!",
-                  textStyle: MyTextStyle.textStyle12.copyWith(fontSize: 24),
-                ),
-              ]),
+              AnimatedTextKit(
+                animatedTexts: [
+                  TyperAnimatedText(
+                    "Need to Know More? Let's Have a Chat!",
+                    textStyle: MyTextStyle.textStyle12.copyWith(fontSize: 24),
+                  ),
+                ],
+                isRepeatingAnimation: false,
+              ),
             ],
           ),
         ),
