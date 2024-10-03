@@ -66,36 +66,35 @@ class ExploreScreen extends StatelessWidget {
                                 width: svgWidth,
                               ),
                               Positioned(
-                                  left: 16.w, top: 94.h, child: ChooseSystem()),
+                                  left: 16.w, top: 90.h, child: ChooseSystem()),
                               Positioned(
                                   left: 109.w,
-                                  top: 94.h,
+                                  top: 90.h,
                                   child: ChooseSystem()),
                               Positioned(
                                   left: 170.w,
-                                  top: 94.h,
+                                  top: 90.h,
                                   child: ChooseSystem()),
                               Positioned(
                                   left: 67.w,
-                                  top: 183.h,
+                                  top: 180.h,
                                   child: ChooseSystem()),
                               Positioned(
                                   left: 16.w,
-                                  top: 300.h,
+                                  top: 290.h,
                                   child: ChooseSystem()),
                               Positioned(
                                   left: 109.w,
-                                  top: 300.h,
+                                  top: 290.h,
                                   child: ChooseSystem()),
                               Positioned(
                                   left: 170.w,
-                                  top: 260.h,
+                                  top: 250.h,
                                   child: ChooseSystem()),
                               Positioned(
                                   left: 220.w,
-                                  top: 170.h,
+                                  top: 160.h,
                                   child: ChooseSystem()),
-
                               // Lines connecting the systems
                               Line(
                                   start: Offset(170.w + 10.5.w, 94.h - 4.h),

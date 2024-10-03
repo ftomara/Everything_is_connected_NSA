@@ -2,7 +2,9 @@ import 'package:everything_is_connected_app/core/utils/common_widgets/background
 import 'package:everything_is_connected_app/core/utils/common_widgets/navigation.dart';
 import 'package:everything_is_connected_app/ui/screens/main_screen.dart';
 import 'package:everything_is_connected_app/ui/widgets/animated_arrow.dart';
+import 'package:everything_is_connected_app/ui/widgets/animated_line.dart';
 import 'package:everything_is_connected_app/ui/widgets/choose_system.dart';
+import 'package:everything_is_connected_app/ui/widgets/line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -60,21 +62,49 @@ class InvetigateScreen extends StatelessWidget {
                               "assets/images/board_frame.svg",
                             ),
                             Positioned(
-                                left: 16.w, top: 94.h, child: ChooseSystem(isExplore: true,)),
+                                left: 16.w, top: 90.h, child: ChooseSystem()),
                             Positioned(
-                                left: 109.w, top: 94.h, child: ChooseSystem(isExplore: true,)),
+                                left: 109.w,
+                                top: 90.h,
+                                child: ChooseSystem(
+                                  isExplore: true,
+                                )),
                             Positioned(
-                                left: 170.w, top: 94.h, child: ChooseSystem(isExplore: true,)),
+                                left: 170.w,
+                                top: 90.h,
+                                child: ChooseSystem(
+                                  isExplore: true,
+                                )),
                             Positioned(
-                                left: 67.w, top: 183.h, child: ChooseSystem(isExplore: true,)),
+                                left: 67.w,
+                                top: 180.h,
+                                child: ChooseSystem(
+                                  isExplore: true,
+                                )),
                             Positioned(
-                                left: 16.w, top: 300.h, child: ChooseSystem(isExplore: true,)),
+                                left: 16.w,
+                                top: 290.h,
+                                child: ChooseSystem(
+                                  isExplore: true,
+                                )),
                             Positioned(
-                                left: 109.w, top: 300.h, child: ChooseSystem(isExplore: true,)),
+                                left: 109.w,
+                                top: 290.h,
+                                child: ChooseSystem(
+                                  isExplore: true,
+                                )),
                             Positioned(
-                                left: 170.w, top: 260.h, child: ChooseSystem(isExplore: true,)),
+                                left: 170.w,
+                                top: 250.h,
+                                child: ChooseSystem(
+                                  isExplore: true,
+                                )),
                             Positioned(
-                                left: 220.w, top: 170.h, child: ChooseSystem(isExplore: true,)),
+                                left: 220.w,
+                                top: 160.h,
+                                child: ChooseSystem(
+                                  isExplore: true,
+                                )),
                           ],
                         );
                       }),

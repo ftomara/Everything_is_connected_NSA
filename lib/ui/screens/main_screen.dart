@@ -73,48 +73,23 @@ class MainScreen extends StatelessWidget {
                           ),
                         ),
                         // Positioned ChooseSystem widgets
+
                         Positioned(
-                          left: isMobile
-                              ? 16.w
-                              : 16.w, // Keep positions consistent unless mobile
-                          top: 94.h,
-                          child: ChooseSystem(),
-                        ),
+                            left: 16.w, top: 90.h, child: ChooseSystem()),
                         Positioned(
-                          left: isMobile ? 90.w : 109.w,
-                          top: 94.h,
-                          child: ChooseSystem(),
-                        ),
+                            left: 109.w, top: 90.h, child: ChooseSystem()),
                         Positioned(
-                          left: isMobile ? 140.w : 170.w,
-                          top: 94.h,
-                          child: ChooseSystem(),
-                        ),
+                            left: 170.w, top: 90.h, child: ChooseSystem()),
                         Positioned(
-                          left: isMobile ? 50.w : 67.w,
-                          top: 183.h,
-                          child: ChooseSystem(),
-                        ),
+                            left: 67.w, top: 180.h, child: ChooseSystem()),
                         Positioned(
-                          left: isMobile ? 16.w : 16.w,
-                          top: 300.h,
-                          child: ChooseSystem(),
-                        ),
+                            left: 16.w, top: 290.h, child: ChooseSystem()),
                         Positioned(
-                          left: isMobile ? 90.w : 109.w,
-                          top: 300.h,
-                          child: ChooseSystem(),
-                        ),
+                            left: 109.w, top: 290.h, child: ChooseSystem()),
                         Positioned(
-                          left: isMobile ? 140.w : 170.w,
-                          top: 260.h,
-                          child: ChooseSystem(),
-                        ),
+                            left: 170.w, top: 250.h, child: ChooseSystem()),
                         Positioned(
-                          left: isMobile ? 180.w : 220.w,
-                          top: 170.h,
-                          child: ChooseSystem(),
-                        ),
+                            left: 220.w, top: 160.h, child: ChooseSystem()),
                       ],
                     ),
                     SizedBox(

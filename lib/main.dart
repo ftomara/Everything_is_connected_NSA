@@ -25,18 +25,17 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       minTextAdapt: true,
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          scaffoldBackgroundColor: Colors.transparent,
-          textTheme: GoogleFonts.abyssinicaSilTextTheme().apply(
-            bodyColor: defaultColor,
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            scaffoldBackgroundColor: Colors.transparent,
+            textTheme: GoogleFonts.abyssinicaSilTextTheme().apply(
+              bodyColor: defaultColor,
+            ),
           ),
-        ),
-        // home: MainScreen(),
-        // home: ExploreAiChat(),
-        // home: ExploreInfoScreen(),
-        home: MainScreen()
-      ),
+          // home: MainScreen(),
+          // home: ExploreAiChat(),
+          // home: ExploreInfoScreen(),
+          home: MainScreen()),
     );
   }
 }
