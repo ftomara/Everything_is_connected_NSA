@@ -66,37 +66,53 @@ class ExploreScreen extends StatelessWidget {
                                 width: svgWidth,
                               ),
                               Positioned(
-                                  left: 16.w, top: 90.h, child: ChooseSystem(
-                                    
+                                  left: 16.w,
+                                  top: 90.h,
+                                  child: ChooseSystem(
+                                    index: 0,
                                   )),
                               Positioned(
                                   left: 109.w,
                                   top: 90.h,
-                                  child: ChooseSystem()),
+                                  child: ChooseSystem(
+                                    index: 1,
+                                  )),
                               Positioned(
                                   left: 170.w,
                                   top: 90.h,
-                                  child: ChooseSystem()),
+                                  child: ChooseSystem(
+                                    index: 2,
+                                  )),
                               Positioned(
                                   left: 67.w,
                                   top: 180.h,
-                                  child: ChooseSystem()),
+                                  child: ChooseSystem(
+                                    index: 3,
+                                  )),
                               Positioned(
                                   left: 16.w,
                                   top: 290.h,
-                                  child: ChooseSystem()),
+                                  child: ChooseSystem(
+                                    index: 4,
+                                  )),
                               Positioned(
                                   left: 109.w,
                                   top: 290.h,
-                                  child: ChooseSystem()),
+                                  child: ChooseSystem(
+                                    index: 5,
+                                  )),
                               Positioned(
                                   left: 170.w,
                                   top: 250.h,
-                                  child: ChooseSystem()),
+                                  child: ChooseSystem(
+                                    index: 6,
+                                  )),
                               Positioned(
                                   left: 220.w,
                                   top: 160.h,
-                                  child: ChooseSystem()),
+                                  child: ChooseSystem(
+                                    index: 7,
+                                  )),
                               // Lines connecting the systems
                               Line(
                                   start: Offset(170.w + 10.5.w, 94.h - 4.h),

@@ -78,7 +78,7 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Infomodel>>(
-      future: getAllEventInfo(0), // Fetch the data
+      future: getAllEventInfo(widget.index), // Fetch the data
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
@@ -117,7 +117,7 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(width: 24.w),
-                          currentPage.isVideo!
+                            currentPage.isVideo!
                                 ? Center(
                                     child: SizedBox(
                                       width: 120.w,

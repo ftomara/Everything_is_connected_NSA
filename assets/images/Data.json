@@ -26,28 +26,24 @@
               "content": []
             },
             {
-              "isvideo": true,
-              "url": "assets/images/gris_with_vel_i_200204-202311_1080p25.mp4",
+              "isvideo": false,
+              "url": "assets/images/carbon_collage.jpg",
               "content": [
-                "Examples for Gases That Contribute to the Greenhouse Effect:",
-                "1-Carbon Dioxide: CO2 is released through natural processes and through human activities,",
-                "such as burning fossil fuels and deforestation."
+                "Examples for Gases That Contribute to the Greenhouse Effect: 1-Carbon Dioxide: CO2 is released through natural processes and through human activities, such as burning fossil fuels and deforestation."
               ]
             },
             {
               "isvideo": false,
               "url": "assets/images/2018VS2024.png",
               "content": [
-                "Look at this map to see how carbon monoxide levels vary globally.",
-                "The compare feature on this map allows looking at the levels of CO on two different dates."
+                "Look at this map to see how carbon monoxide levels vary globally. The compare feature on this map allows looking at the levels of CO on two different dates."
               ]
             },
             {
               "isvideo": false,
               "url": "assets/images/Methane_Collage.png",
               "content": [
-                "2-Methane: After carbon dioxide (CO2), methane (CH4) is the most important greenhouse gas contributing to human-induced climate change.",
-                "Methane is responsible for 23% of the global warming produced by CO2, CH4, and N2O."
+                "2-Methane: After carbon dioxide (CO2), methane (CH4) is the most important greenhouse gas contributing to human-induced climate change. Methane is responsible for 23% of the global warming produced by CO2, CH4, and N2O."
               ]
             }
           ]
@@ -60,7 +56,7 @@
           "info": [
             {
               "isvideo": false,
-              "url": "assets/images/Acidification_process.svg",
+              "url": "assets/images/Acidification_process.png",
               "content": [
                 "An acid is a substance that can cause certain changes when it is combined with water or a metal. Acidity is the amount of acid in water."
               ]
@@ -69,8 +65,7 @@
               "isvideo": false,
               "url": "assets/images/Ocean_Carbon_concentration.png",
               "content": [
-                "As greenhouse gas concentrations rise, more carbon dioxide is absorbed by the oceans. This increased absorption not only drives global warming but also exacerbates ocean acidification.",
-                "Ocean acidification is a change in the properties of ocean water that can be harmful for plants and animals. Scientists have observed that the ocean is becoming more acidic as its water absorbs carbon dioxide from the atmosphere."
+                "As greenhouse gas concentrations rise, more carbon dioxide is absorbed by the oceans. This increased absorption not only drives global warming but also exacerbates ocean acidification. Ocean acidification is a change in the properties of ocean water that can be harmful for plants and animals. Scientists have observed that the ocean is becoming more acidic as its water absorbs carbon dioxide from the atmosphere."
               ]
             }
           ]
@@ -92,27 +87,21 @@
               "isvideo": false,
               "url": "assets/images/Marine.png",
               "content": [
-                "Coral Reefs: Corals, which rely on carbonate ions to build their exoskeletons, suffer from weaker, thinner skeletons in acidic waters. They are very sensitive to light and temperature.",
-                "If the water they live in gets too hot, they might not survive.",
-                "If coral reefs are under too much stress, like in these conditions, they can eject the algae living on them and turn completely white. This is known as coral bleaching."
+                "Coral Reefs: Corals, which rely on carbonate ions to build their exoskeletons, suffer from weaker, thinner skeletons in acidic waters. They are very sensitive to light and temperature. If the water they live in gets too hot, they might not survive. If coral reefs are under too much stress, like in these conditions, they can eject the algae living on them and turn completely white. This is known as coral bleaching."
               ]
             },
             {
               "isvideo": false,
               "url": "assets/images/clownfish.png",
               "content": [
-                "Fish: Acidic water affects fish behavior, with some species like clownfish losing their ability to detect predators,",
-                "and others experiencing high mortality rates during early life stages.",
-                "Fish shoals also struggle to coordinate, increasing vulnerability to predators."
+                "Fish: Acidic water affects fish behavior, with some species like clownfish losing their ability to detect predators, and others experiencing high mortality rates during early life stages. Fish shoals also struggle to coordinate, increasing vulnerability to predators."
               ]
             },
             {
               "isvideo": false,
               "url": "assets/images/Sea_Star.png",
               "content": [
-                "Oysters, Mussels, Urchins, and Starfish: Calcifying animals like oysters and mussels have difficulty forming their shells,",
-                "leading to high mortality, especially in larvae. Shell composition in mussels is weakening, and ocean acidification impairs sea urchin growth and reproduction.",
-                "Some starfish, like crown of thorns, may benefit by finding their food more accessible, but this could worsen coral reef damage."
+                "Oysters, Mussels, Urchins, and Starfish: Calcifying animals like oysters and mussels have difficulty forming their shells, leading to high mortality, especially in larvae. Shell composition in mussels is weakening, and ocean acidification impairs sea urchin growth and reproduction. Some starfish, like crown of thorns, may benefit by finding their food more accessible, but this could worsen coral reef damage."
               ]
             }
           ]
@@ -127,17 +116,14 @@
               "isvideo": false,
               "url": "assets/images/Air_Quality_Icon.png",
               "content": [
-                "Smoke from wildfires contains a noxious mix of chemicals that affects not only air quality and health,",
-                "but also damages plants, ecosystems, and crops, leading to more carbon emissions and thus more greenhouse gases in the atmosphere, says Dr. Lorenzo Labrador."
+                "Smoke from wildfires contains a noxious mix of chemicals that affects not only air quality and health, but also damages plants, ecosystems, and crops, leading to more carbon emissions and thus more greenhouse gases in the atmosphere, says Dr. Lorenzo Labrador."
               ]
             },
             {
               "isvideo": false,
               "url": "assets/images/NO2_map.png",
               "content": [
-                "Nitrogen dioxide (NO2) is a pollutant, the primary sources of which are automobile exhaust, smoke from industry, and the burning of fossil fuels.",
-                "If breathed in, NO2 can aggravate respiratory conditions such as asthma. Long-term exposure can lead to the development of asthma and potentially increase susceptibility to respiratory infections.",
-                "NO2 reacts with other chemicals in the atmosphere, forming particulate matter and ozone, producing haze and acid rain, and contributing to nitrogen pollution in coastal waters."
+                "Nitrogen dioxide (NO2) is a pollutant, the primary sources of which are automobile exhaust, smoke from industry, and the burning of fossil fuels. If breathed in, NO2 can aggravate respiratory conditions such as asthma. Long-term exposure can lead to the development of asthma and potentially increase susceptibility to respiratory infections. NO2 reacts with other chemicals in the atmosphere, forming particulate matter and ozone, producing haze and acid rain, and contributing to nitrogen pollution in coastal waters."
               ]
             }
           ]
@@ -152,31 +138,21 @@
               "isvideo": true,
               "url": "assets/images/Ice_Sheets.mp4",
               "content": [
-                "Ice sheets influence weather and climate. Large high-altitude plateaus on the ice sheets alter storm tracks and create cold downslope winds close to the ice surface.",
-                "Known as katabatic winds, these downslope winds occur when the higher altitudes radiate heat and are cooled.",
-                "As the air cools, it becomes denser. Gravity does the rest by pulling this denser air downhill."
+                "Ice sheets influence weather and climate. Large high-altitude plateaus on the ice sheets alter storm tracks and create cold downslope winds close to the ice surface. Known as katabatic winds, these downslope winds occur when the higher altitudes radiate heat and are cooled. As the air cools, it becomes denser. Gravity does the rest by pulling this denser air downhill."
               ]
             },
             {
               "isvideo": false,
-              "url": "assets/images/interaction_ice_sheet.jpg",
+              "url": "assets/images/interaction_ice_sheet.jpg.webp",
               "content": [
-                "The amount of snow and ice that covers the Earth's land and ocean changes with latitude, altitude, and the seasons.",
-                "Over the last century average snowfall and global ice cover has decreased in many regions due to rising average temperatures caused by the release of greenhouse gases.",
-                "The decrease in snow and ice cover is changing ecosystems and affecting our climate system.",
-                "Melting ice sheets also reduce the ocean's salinity, or salt content. Tons of freshwater are added to the ocean every day by melting ice sheets.",
-                "Large additions of freshwater change the ocean ecosystems. Organisms, such as many types of corals, depend on saltwater for survival.",
-                "Some corals may not be able to adjust to a more freshwater habitat."
+                "The amount of snow and ice that covers the Earth's land and ocean changes with latitude, altitude, and the seasons. Over the last century, average snowfall and global ice cover has decreased in many regions due to rising average temperatures caused by the release of greenhouse gases. The decrease in snow and ice cover is changing ecosystems and affecting our climate system. Melting ice sheets also reduce the ocean's salinity, or salt content. Tons of freshwater are added to the ocean every day by melting ice sheets. Large additions of freshwater change the ocean ecosystems. Organisms, such as many types of corals, depend on saltwater for survival. Some corals may not be able to adjust to a more freshwater habitat."
               ]
             },
             {
               "isvideo": true,
               "url": "assets/images/antartica_change.mp4",
               "content": [
-                "Antarctica is losing ice mass (melting) at an average rate of about 150 billion tons per year, and Greenland is losing about 270 billion tons per year, adding to sea level rise.",
-                "This is important because the ice sheets of Greenland and Antarctica store about two-thirds of all the fresh water on Earth.",
-                "They are losing ice due to the ongoing warming of Earth's surface and ocean.",
-                "Meltwater coming from these ice sheets is responsible for about one-third of the global average rise in sea level since 1993."
+                "Antarctica is losing ice mass (melting) at an average rate of about 150 billion tons per year, and Greenland is losing about 270 billion tons per year, adding to sea level rise. This is important because the ice sheets of Greenland and Antarctica store about two-thirds of all the freshwater on Earth. They are losing ice due to the ongoing warming of Earth's surface and ocean. Meltwater coming from these ice sheets is responsible for about one-third of the global average rise in sea level since 1993."
               ]
             },
             {
@@ -185,11 +161,56 @@
               "content": []
             },
             {
-              "isvideo": false,
+              "isvideo": true,
               "url": "assets/images/greenland.mp4",
               "content": [
-                "The Greenland ice sheet's mass has rapidly declined in the last several years due to surface melting and iceberg calving.",
-                "Research based on satellite data indicates that between 2002 and 2023, Greenland shed an average of 270 billion metric tons of ice per year, adding to global sea level rise."
+                "The Greenland ice sheet's mass has rapidly declined in the last several years due to surface melting and iceberg calving. Research based on satellite data indicates that between 2002 and 2023, Greenland shed an average of 270 billion metric tons of ice per year, adding to global sea level rise."
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "event": {
+          "title": "Sea Level Rising",
+          "icon": "sea_icon.webp",
+          "info": [
+            {
+              "isvideo": false,
+              "url": "assets/images/mean_sea_level.png",
+              "content": [
+                "Earth's seas are rising as a direct result of changing climate. Ocean temperatures are increasing, causing ocean expansion. And as ice sheets and glaciers melt, they add more water. Regional effects cause sea levels to increase on some parts of the planet, decrease on others, and even to remain relatively flat in a few places."
+              ]
+            }
+        
+          ]
+        }
+      },
+      {
+        "event": {
+          "title": "Wild Fires",
+          "icon": "assets/images/wildfires_icon.jpg",
+          "info": [
+            {
+              "isvideo": false,
+              "url": "assets/images/wildfires.png",
+              "content": [
+                "Wildfires occur when heat sources like lightning, human negligence, or even volcanic activity ignite dry vegetation, serving as fuel. Hot, dry, and windy conditions promote their spread. Climate change is creating warmer, drier conditions that cause fire seasons in some regions like western North America to last longer and be more active."
+              ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/wildfires_1.jpg",
+              "content": [
+                "Global warming makes wildfires more frequent and intense, while wildfires release greenhouse gases that exacerbate global warming, creating a cycle of worsening climate impacts. -Wildfires and global warming are closely connected through a feedback loop, where each influences the other:","1. **Global Warming Increases Wildfire Risk**: As global temperatures rise due to greenhouse gas emissions, conditions like higher temperatures, droughts, and dry vegetation become more common. These conditions make it easier for wildfires to ignite and spread. Warmer weather dries out forests and other landscapes, creating more fuel for fires.",
+"2. **Wildfires Contribute to Global Warming**: Wildfires release large amounts of carbon dioxide (CO₂), methane (CH₄), and other greenhouse gases into the atmosphere when forests and plants burn. These gases contribute to the greenhouse effect, trapping more heat in the atmosphere and accelerating global warming."
+                            ]
+            },
+            {
+              "isvideo": false,
+              "url": "assets/images/carbon_graph.png",
+              "content": [
+                "-Climate change is intensifying the conditions that lead to wildfires. Wildfires, in turn, accelerate climate change by releasing large amounts of carbon dioxide, creating a feedback loop. -Wildfires despite their destructive nature can benefit ecosystems by clearing out dead material, promoting new growth, and even helping some plant species, such as certain types of pine trees to reproduce."
               ]
             }
           ]

@@ -9,11 +9,11 @@ import 'package:flutter_svg/svg.dart';
 
 class ChooseSystem extends StatelessWidget {
   final bool isMain;
-  const ChooseSystem({super.key, this.isExplore = false, this.isMain = false});
+  const ChooseSystem({super.key, this.index=0, this.isExplore = false, this.isMain = false});
   final bool isExplore;
+final int index;
   @override
   Widget build(BuildContext context) {
-    
     return InkWell(
       onTap: () {
         !isMain
@@ -22,7 +22,7 @@ class ChooseSystem extends StatelessWidget {
                 : Navigation.push(
                     context,
                     ExploreInfoScreen(
-                      index: 0,
+                      index: index,
                     )))
             : null;
       },
