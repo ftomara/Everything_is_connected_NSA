@@ -1,4 +1,5 @@
 import 'package:everything_is_connected_app/core/utils/common_widgets/navigation.dart';
+import 'package:everything_is_connected_app/model/image_borde.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_info_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/info_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/question_screen.dart';
@@ -9,9 +10,15 @@ import 'package:flutter_svg/svg.dart';
 
 class ChooseSystem extends StatelessWidget {
   final bool isMain;
-  const ChooseSystem({super.key, this.index=0, this.isExplore = false, this.isMain = false});
+  final ImageBorde imageBorde;
+  const ChooseSystem(
+      {super.key,
+      required this.imageBorde,
+      this.index = 0,
+      this.isExplore = false,
+      this.isMain = false});
   final bool isExplore;
-final int index;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -33,11 +40,13 @@ final int index;
             top: 8.h,
             left: 0.3.w,
             child: Image.asset(
-              "assets/images/Screenshot 2024-09-20 at 10.17.01 PM 1.png",
+              imageBorde.image,
+              width: 99,
+              height: 96,
               fit: BoxFit.fill,
             ),
           ),
-          SvgPicture.asset("assets/images/image-frame1.svg"),
+          SvgPicture.asset(imageBorde.border),
           // Positioned(
           //     top: MediaQuery.of(context).size.height * 0.100,
           //     child: ChooseSystemButton(

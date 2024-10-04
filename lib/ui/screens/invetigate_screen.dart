@@ -1,5 +1,6 @@
 import 'package:everything_is_connected_app/core/utils/common_widgets/background_image.dart';
 import 'package:everything_is_connected_app/core/utils/common_widgets/navigation.dart';
+import 'package:everything_is_connected_app/model/image_borde.dart';
 import 'package:everything_is_connected_app/ui/screens/main_screen.dart';
 import 'package:everything_is_connected_app/ui/widgets/animated_arrow.dart';
 import 'package:everything_is_connected_app/ui/widgets/animated_line.dart';
@@ -58,7 +59,6 @@ class InvetigateScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           clipBehavior: Clip.none,
                           children: [
-                      
                             SvgPicture.asset(
                               "assets/images/board_frame.svg",
                             ),
@@ -66,48 +66,84 @@ class InvetigateScreen extends StatelessWidget {
                                 left: 16.w,
                                 top: 90.h,
                                 child: ChooseSystem(
+                                  imageBorde: ImageBorde(
+                                      border:
+                                          "assets/images/image_frame/Ocean Acidification.svg",
+                                      image:
+                                          "assets/images/Ocean_Acidification_Icon.png"),
                                   isExplore: true,
                                 )),
                             Positioned(
                                 left: 109.w,
                                 top: 90.h,
                                 child: ChooseSystem(
+                                  imageBorde: ImageBorde(
+                                      border:
+                                          "assets/images/image_frame/Marine Life.svg",
+                                      image:
+                                          "assets/images/Marine_life_icon.png"),
                                   isExplore: true,
                                 )),
                             Positioned(
                                 left: 170.w,
                                 top: 90.h,
                                 child: ChooseSystem(
+                                  imageBorde: ImageBorde(
+                                      border:
+                                          "assets/images/image_frame/Ice Melting.svg",
+                                      image: "assets/images/ice_icon.jpg.webp"),
                                   isExplore: true,
                                 )),
                             Positioned(
                                 left: 67.w,
                                 top: 180.h,
                                 child: ChooseSystem(
+                                  imageBorde: ImageBorde(
+                                      border:
+                                          "assets/images/image_frame/Greenhouse Gases.svg",
+                                      image: "assets/images/green_icon.png"),
                                   isExplore: true,
                                 )),
                             Positioned(
                                 left: 16.w,
                                 top: 290.h,
                                 child: ChooseSystem(
+                                  imageBorde: ImageBorde(
+                                      border:
+                                          "assets/images/image_frame/Global Warming.svg",
+                                      image: "assets/images/global_icon.jpg"),
                                   isExplore: true,
                                 )),
                             Positioned(
                                 left: 109.w,
                                 top: 290.h,
                                 child: ChooseSystem(
+                                  imageBorde: ImageBorde(
+                                      border:
+                                          "assets/images/image_frame/Wild Fires.svg",
+                                      image:
+                                          "assets/images/wildfires_icon.jpg"),
                                   isExplore: true,
                                 )),
                             Positioned(
                                 left: 170.w,
                                 top: 250.h,
                                 child: ChooseSystem(
+                                  imageBorde: ImageBorde(
+                                      border:
+                                          "assets/images/image_frame/Air Quality.svg",
+                                      image:
+                                          "assets/images/Air_Quality_Icon.png"),
                                   isExplore: true,
                                 )),
                             Positioned(
                                 left: 220.w,
                                 top: 160.h,
                                 child: ChooseSystem(
+                                  imageBorde: ImageBorde(
+                                      border:
+                                          "assets/images/image_frame/Sea Level Rising.svg",
+                                      image: "assets/images/sea_icon.png"),
                                   isExplore: true,
                                 )),
                           ],

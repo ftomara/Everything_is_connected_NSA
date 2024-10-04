@@ -102,7 +102,7 @@
       {
         "event": {
           "title": "Greenhouse Gases",
-          "icon": "assets/images/greenhouse_gases_icon.png",
+          "icon": "assets/images/green_icon.png",
           "info": [
             {
               "isvideo": false,
@@ -234,7 +234,7 @@
       {
         "event": {
           "title": "Sea Level Rising",
-          "icon": "sea_icon.webp",
+          "icon": "assets/images/sea_icon.png",
           "info": [
             {
               "isvideo": false,
@@ -253,7 +253,7 @@
             {
               "isvideo": true,
               "url": "assets/images/rising_level.mp4",
-              "content": []
+              "content": ["ddd"]
             }
           ]
         }
