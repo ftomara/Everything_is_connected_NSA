@@ -48,7 +48,8 @@ class MainScreen extends StatelessWidget {
                           top: -20.h,
                           child: CategoryButton(
                             onTap: () {
-                              systemDialogue("Atmosphere", SystemInfo().system1, context);
+                              systemDialogue("Atmosphere", SystemInfo().system1,
+                                  'assets/images/atmosphere.jpg', context);
                             },
                             text: "Atmosphere",
                           ),
@@ -58,7 +59,8 @@ class MainScreen extends StatelessWidget {
                           top: -20.h,
                           child: CategoryButton(
                             onTap: () {
-                              systemDialogue("Biosphere",SystemInfo().system2, context);
+                              systemDialogue("Biosphere", SystemInfo().system2,
+                                  'assets/images/biosphere (2).png', context);
                             },
                             text: "Biosphere",
                           ),
@@ -68,7 +70,11 @@ class MainScreen extends StatelessWidget {
                           top: -20.h,
                           child: CategoryButton(
                             onTap: () {
-                              systemDialogue("hydrosphere", SystemInfo().system3, context);
+                              systemDialogue(
+                                  "hydrosphere",
+                                  SystemInfo().system3,
+                                  "assets/images/hydrosphere.jpeg",
+                                  context);
                             },
                             text: "hydrosphere",
                           ),
@@ -78,7 +84,8 @@ class MainScreen extends StatelessWidget {
                           top: -20.h,
                           child: CategoryButton(
                             onTap: () {
-                              systemDialogue("Geosphere", SystemInfo().system4, context);
+                              systemDialogue("Geosphere", SystemInfo().system4,
+                                  "assets/images/biosphere (2).png", context);
                             },
                             text: "Geosphere",
                           ),

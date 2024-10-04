@@ -3,6 +3,7 @@ import 'package:everything_is_connected_app/constant.dart';
 
 import 'package:everything_is_connected_app/core/utils/my_text_style.dart';
 import 'package:everything_is_connected_app/model/infomodel.dart';
+import 'package:everything_is_connected_app/model/questionmodel.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_ai_chat.dart';
 import 'package:everything_is_connected_app/ui/screens/info_screen.dart';
 import 'package:everything_is_connected_app/ui/widgets/answerbtn.dart';
@@ -20,6 +21,17 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
+  final Questionmodel _questionmodel = Questionmodel(
+      "How does Arctic sea ice melting contribute to sea level rise?",
+      [
+        "a. It speeds up the melting of land ice",
+        "b. Melting sea ice adds water to the ocean",
+        "c. It cools the ocean,causing sea levels to rise",
+        "d. It increases cloud cover, raising sea levels"
+      ],
+      1,
+      "answer is b !");
+  int _selectedAnswerIndex = -1;
   @override
   Widget build(BuildContext context) {
     return InfoScreen(
@@ -32,7 +44,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
           left: 8.dg,
           top: 6.dg,
           child: Center(
-            child: Container(
+            child: SizedBox(
               // margin: EdgeInsets.symmetric(horizontal: 12),
               // padding: EdgeInsets.symmetric(horizontal: 8),
               // color: Colors.red[100],
@@ -44,52 +56,72 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 30.w,
+                    width: 8.w,
                   ),
-                  Transform.scale(
-                    scale: 2.5,
-                    child: ChooseSystemBig(text: "sea level rise"),
-                  ),
+                  // Transform.scale(
+                  //   scale: 2.5,
+                  //   child: ChooseSystemBig(text: "sea level rise"),
+                  // ),
+                  Image.asset(
+                    "assets/images/greenhouse.png",
+                    fit: BoxFit.contain,
+                  )
                   // Container(
                   //   margin: EdgeInsets.only(right: 50),
-                  //   color: Colors.green[100],
-                  //   width: 50.w,
-                  //   height: 50.w,
-                  // ),
+                  //   // color: Colors.green[100],
+                  //   decoration: BoxDecoration(
+                  //     image: DecorationImage(
+                  //       image: AssetImage('assets/images/greenhouse.png'),
+                  //       fit: BoxFit.contain,
+                  //     ),
+                  //   ),
+                  //   // width: 50.w,
+                  //   // height: 50.h,
+                  // )
+                  ,
                   SizedBox(
-                    width: 30.w,
+                    width: 8.w,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "question.....?",
-                        style: MyTextStyle.textStyle12.copyWith(fontSize: 36),
-                      ),
-                      SizedBox(
-                        height: 18,
-                      ),
-                      Answerbtn(
-                        text:
-                            "a. answer1 hjkhdfkhsaeiurhiuweghriahdkfhzskdfhkashdfkdsah",
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Answerbtn(text: "a. answer1"),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Answerbtn(text: "a. answer1"),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Answerbtn(text: "a. answer1"),
-                    ],
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          _questionmodel.question,
+                          style: MyTextStyle.textStyle12.copyWith(fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        for (int i = 0; i < _questionmodel.answers.length; i++)
+                          Column(
+                            children: [
+                              Answerbtn(
+                                text: _questionmodel.answers[i],
+                                isCorrect: i == _questionmodel.rightindx,
+                                isSelected: i == _selectedAnswerIndex,
+                                ontap: () {
+                                  setState(() {
+                                    _selectedAnswerIndex = i;
+                                  });
+                                  if (i == _questionmodel.rightindx) {
+                                    // Correct answer tapped, handle accordingly
+                                    print("Correct answer!");
+                                  } else {
+                                    _showwrong(context);
+                                    print("Wrong answer!");
+                                  }
+                                },
+                              ),
+                              SizedBox(height: 8),
+                            ],
+                          ),
+                      ],
+                    ),
                   ),
                   SizedBox(
-                    width: 24.w,
+                    width: 48.w,
                   ),
                 ],
               )),
@@ -129,7 +161,34 @@ class _QuestionScreenState extends State<QuestionScreen> {
           backgroundColor: Color(0xFF0C384C),
           title: const Text('Hint'),
           content: SingleChildScrollView(
-            child: SelectableText(message),
+            child: SelectableText(_questionmodel.hint),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(
+                'OK',
+                style: MyTextStyle.textStyle12
+                    .copyWith(fontSize: 12, color: defaultColor),
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  void _showwrong(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Color.fromARGB(255, 121, 21, 21),
+          title: const Text('Wrong Answer'),
+          content: SingleChildScrollView(
+            child: SelectableText("Try Again !"),
           ),
           actions: [
             TextButton(

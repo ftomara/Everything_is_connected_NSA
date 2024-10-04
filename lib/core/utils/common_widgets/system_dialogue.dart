@@ -3,7 +3,7 @@ import 'package:everything_is_connected_app/core/utils/my_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void systemDialogue(String title, String message, BuildContext context) {
+void systemDialogue(String title, String message, String image,BuildContext context) {
   showDialog(
     context: context,
     builder: (context) {
@@ -32,7 +32,7 @@ void systemDialogue(String title, String message, BuildContext context) {
                     Expanded(
                         child: Expanded(
                             child: Image.asset(
-                      "assets/images/Carbon_2018.png",
+                      image,
                       width: 70.w,
                       height: 80.w,
                     ))),
