@@ -154,14 +154,24 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
                             SizedBox(width: 36.w),
                           ],
                         )
-                      : Center(
-                          child: Image.asset(
-                            currentPage.imagepath ?? "",
-                            fit: BoxFit.contain,
-                            width: double.infinity,
-                            height: double.infinity,
-                          ),
-                        ),
+                      : currentPage.isVideo!
+                          ? Center(
+                              child: SizedBox(
+                                width: 200.w,
+                                height: 400.h,
+                                child: FlickVideoPlayer(
+                                  flickManager: flickManager,
+                                ),
+                              ),
+                            )
+                          : Center(
+                              child: Image.asset(
+                                currentPage.imagepath ?? "",
+                                fit: BoxFit.contain,
+                                width: double.infinity,
+                                height: double.infinity,
+                              ),
+                            ),
                 ),
               ),
             ),
