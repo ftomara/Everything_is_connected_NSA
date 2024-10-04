@@ -29,8 +29,8 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
   void initState() {
     super.initState();
     flickManager = FlickManager(
-        videoPlayerController: VideoPlayerController.networkUrl(Uri.parse(
-            "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4")));
+      videoPlayerController: VideoPlayerController.asset(""),
+    );
   }
 
   void _onArrowTap(List<Infomodel> pages) {
@@ -97,7 +97,13 @@ class _ExploreInfoScreenState extends State<ExploreInfoScreen> {
         print(currentPage.imagepath);
         print(_currentImageIndex);
         final bool hasParagraphs = currentPage.info!.isNotEmpty;
-
+        if (currentPage.isVideo == true) {
+          flickManager = FlickManager(
+            videoPlayerController: VideoPlayerController.asset(
+              (currentPage.imagepath ?? ""), // Use video URL from currentPage
+            ),
+          );
+        }
         return InfoScreen(
           arrowback: _currentImageIndex > 0 || _currentParagraphIndex > 0,
           ontapback: () => _onArrowTapBack(pages),
