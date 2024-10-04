@@ -5,7 +5,7 @@ import 'package:gradient_borders/input_borders/gradient_outline_input_border.dar
 
 // ignore: must_be_immutable
 class Answerbtn extends StatefulWidget {
-  Answerbtn({super.key, required this.text , this.ontap});
+  Answerbtn({super.key, required this.text , this.ontap, required bool isCorrect, required bool isSelected});
   String text = '';
   final Function()? ontap;
 
@@ -30,7 +30,8 @@ class _AnswerbtnState extends State<Answerbtn> {
           ),
         ),
         child: Center(
-          child: Text(widget.text,style: MyTextStyle.textStyle12.copyWith(fontSize: 20)),
+          child: Text(widget.text,style: MyTextStyle.textStyle12.copyWith(fontSize: 16),
+          textAlign: TextAlign.left,),
         ),
       ),
     );

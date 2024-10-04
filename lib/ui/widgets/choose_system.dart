@@ -1,4 +1,5 @@
 import 'package:everything_is_connected_app/core/utils/common_widgets/navigation.dart';
+import 'package:everything_is_connected_app/model/questionmodel.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_info_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/info_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/question_screen.dart';
@@ -9,15 +10,16 @@ import 'package:flutter_svg/svg.dart';
 
 class ChooseSystem extends StatelessWidget {
   final bool isMain;
-  const ChooseSystem({super.key, this.isExplore = false, this.isMain = false});
+  const ChooseSystem({super.key, this.isExplore = false, this.isMain = false ,  this.question});
   final bool isExplore;
+  final Questionmodel? question ; 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         !isMain
             ? (isExplore
-                ? Navigation.push(context, QuestionScreen())
+                ? Navigation.push(context, QuestionScreen(questionmodel: question!,))
                 : Navigation.push(context, ExploreInfoScreen()))
             : null;
       },
