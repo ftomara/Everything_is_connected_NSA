@@ -2,6 +2,7 @@ import 'package:everything_is_connected_app/core/utils/common_widgets/background
 
 import 'package:everything_is_connected_app/core/utils/common_widgets/navigation.dart';
 import 'package:everything_is_connected_app/core/utils/common_widgets/system_dialogue.dart';
+import 'package:everything_is_connected_app/model/system_info.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/invetigate_screen.dart';
 import 'package:everything_is_connected_app/ui/widgets/category_button.dart';
@@ -47,7 +48,7 @@ class MainScreen extends StatelessWidget {
                           top: -20.h,
                           child: CategoryButton(
                             onTap: () {
-                              systemDialogue("Atmosphere", "ok", context);
+                              systemDialogue("Atmosphere", SystemInfo().system1, context);
                             },
                             text: "Atmosphere",
                           ),
@@ -57,7 +58,7 @@ class MainScreen extends StatelessWidget {
                           top: -20.h,
                           child: CategoryButton(
                             onTap: () {
-                              systemDialogue("Biosphere", "ok", context);
+                              systemDialogue("Biosphere",SystemInfo().system2, context);
                             },
                             text: "Biosphere",
                           ),
@@ -67,9 +68,9 @@ class MainScreen extends StatelessWidget {
                           top: -20.h,
                           child: CategoryButton(
                             onTap: () {
-                              systemDialogue("Cryosphere", "ok", context);
+                              systemDialogue("hydrosphere", SystemInfo().system3, context);
                             },
-                            text: "Cryosphere",
+                            text: "hydrosphere",
                           ),
                         ),
                         Positioned(
@@ -77,7 +78,7 @@ class MainScreen extends StatelessWidget {
                           top: -20.h,
                           child: CategoryButton(
                             onTap: () {
-                              systemDialogue("ok", "ok", context);
+                              systemDialogue("Geosphere", SystemInfo().system4, context);
                             },
                             text: "Geosphere",
                           ),

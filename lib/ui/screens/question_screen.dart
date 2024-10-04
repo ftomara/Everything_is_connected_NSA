@@ -88,6 +88,9 @@ class _QuestionScreenState extends State<QuestionScreen> {
                       Answerbtn(text: "a. answer1"),
                     ],
                   ),
+                  SizedBox(
+                    width: 24.w,
+                  ),
                 ],
               )),
             ),
