@@ -1,4 +1,6 @@
 import 'package:everything_is_connected_app/constant.dart';
+import 'package:everything_is_connected_app/core/utils/question.dart';
+import 'package:everything_is_connected_app/logic/lineslist_cubit.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_screen.dart';
 import 'package:everything_is_connected_app/core/utils/common_widgets/background_image.dart';
 import 'package:everything_is_connected_app/ui/screens/category_screen.dart';
@@ -8,6 +10,7 @@ import 'package:everything_is_connected_app/ui/screens/main_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/question_screen.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,18 +27,21 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       splitScreenMode: true,
       minTextAdapt: true,
-      child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.transparent,
-            textTheme: GoogleFonts.abyssinicaSilTextTheme().apply(
-              bodyColor: defaultColor,
+      child: BlocProvider<LineslistCubit>(
+        create: (context) => LineslistCubit(),
+        child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              scaffoldBackgroundColor: Colors.transparent,
+              textTheme: GoogleFonts.abyssinicaSilTextTheme().apply(
+                bodyColor: defaultColor,
+              ),
             ),
-          ),
-          // home: MainScreen(),
-          // home: ExploreAiChat(),
-          // home: ExploreInfoScreen(),
-          home: MainScreen()),
+            // home: MainScreen(),
+            // home: ExploreAiChat(),
+            // home: ExploreInfoScreen(),
+            home: MainScreen()),
+      ),
     );
   }
 }

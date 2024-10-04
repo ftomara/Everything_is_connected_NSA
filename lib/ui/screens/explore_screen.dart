@@ -106,8 +106,7 @@ class ExploreScreen extends StatelessWidget {
                                     imageBorde: ImageBorde(
                                         border:
                                             "assets/images/image_frame/Greenhouse Gases.svg",
-                                        image:
-                                            "assets/images/green_icon.png"),
+                                        image: "assets/images/green_icon.png"),
                                     index: 3,
                                   )),
                               Positioned(
@@ -121,57 +120,72 @@ class ExploreScreen extends StatelessWidget {
                                     index: 4,
                                   )),
                               Positioned(
-                                
                                   left: 109.w,
                                   top: 290.h,
                                   child: ChooseSystem(
-                                         imageBorde: ImageBorde(
+                                    imageBorde: ImageBorde(
                                         border:
                                             "assets/images/image_frame/Wild Fires.svg",
-                                        image: "assets/images/wildfires_icon.jpg"),
+                                        image:
+                                            "assets/images/wildfires_icon.jpg"),
                                     index: 5,
                                   )),
                               Positioned(
                                   left: 170.w,
                                   top: 250.h,
                                   child: ChooseSystem(
-                                       imageBorde: ImageBorde(
+                                    imageBorde: ImageBorde(
                                         border:
                                             "assets/images/image_frame/Air Quality.svg",
-                                        image: "assets/images/Air_Quality_Icon.png"),
+                                        image:
+                                            "assets/images/Air_Quality_Icon.png"),
                                     index: 6,
                                   )),
                               Positioned(
                                   left: 220.w,
                                   top: 160.h,
-                                  child: ChooseSystem(  imageBorde: ImageBorde(
+                                  child: ChooseSystem(
+                                    imageBorde: ImageBorde(
                                         border:
                                             "assets/images/image_frame/Sea Level Rising.svg",
                                         image: "assets/images/sea_icon.png"),
                                     index: 7,
                                   )),
                               // Lines connecting the systems
+/*
+                                left: 170.w,
+                                  top: 90.h,
+                                  */
+
+                              /*
+                                    left: 220.w,
+                                  top: 160.h,
+                                 */
                               Line(
-                                  start: Offset(170.w + 10.5.w, 94.h - 4.h),
-                                  end: Offset(220.w + 10.5.w, 170.h - 4.h)),
+                                  start: Offset(16.w + 10.5.w, 90.h),
+                                  end: Offset(109.w + 10.5.w, 90.h)),
                               Line(
-                                  start: Offset(170.w + 10.5.w, 94.h - 4.h),
-                                  end: Offset(109.w + 10.5.w, 300.h - 4.h)),
+                                  start: Offset(16.w + 10.5.w, 90.h),
+                                  end: Offset(67.w + 10.5.w, 180.h)),
+
                               Line(
-                                  start: Offset(109.w + 10.5.w, 94.h - 4.h),
-                                  end: Offset(170.w + 10.5.w, 260.h - 4.h)),
+                                  start: Offset(67.w + 10.5.w, 180.h),
+                                  end: Offset(16.w + 10.5.w, 290.h)),
+
                               Line(
-                                  start: Offset(109.w + 10.5.w, 94.h - 4.h),
-                                  end: Offset(109.w + 10.5.w, 300.h - 4.h)),
+                                  start: Offset(16.w + 10.5.w, 290.h),
+                                  end: Offset(109.w + 10.5.w, 290.h)),
+
                               Line(
-                                  start: Offset(67.w + 10.5.w, 183.h - 4.h),
-                                  end: Offset(109.w + 10.5.w, 300.h - 4.h)),
+                                  start: Offset(109.w + 10.5.w, 290.h),
+                                  end: Offset(170.w + 10.5.w, 250.h)),
+
                               Line(
-                                  start: Offset(16.w + 10.5.w, 94.h - 4.h),
-                                  end: Offset(67.w + 10.5.w, 183.h - 4.h)),
+                                  start: Offset(67.w + 10.5.w, 180.h),
+                                  end: Offset(170.w + 10.5.w, 90.h)),
                               Line(
-                                  start: Offset(67.w + 10.5.w, 183.h - 4.h),
-                                  end: Offset(16.w + 10.5.w, 300.h - 4.h)),
+                                  start: Offset(170.w + 10.5.w, 90.h),
+                                  end: Offset(220.w + 10.5.w, 160.h)),
                             ],
                           );
                         },
