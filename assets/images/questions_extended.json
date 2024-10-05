@@ -1,135 +1,129 @@
 [
-    {
-        "question": "How might changes in ocean chemistry influence the creatures that inhabit these waters?",
-        "hint": "How might changes in ocean chemistry influence the creatures that inhabit these waters?",
-        "rightindx": 1,
-        "answers": [
-           "It promotes fish reproduction",
-"It leads to coral bleaching.",
-"It enhances marine biodiversity.",
-"It reduces water temperature."
-   ],
-        "haslink": true
-        ,"startPosition": {
-    "x": 100.0,
-    "y": 200.0
-  },
-  "endPosition": {
-    "x": 300.0,
-    "y": 400.0
-  }
+  {
+    "question": "How might changes in ocean chemistry influence the creatures that inhabit these waters?",
+    "hint": "How might changes in ocean chemistry influence the creatures that inhabit these waters?",
+    "rightindx": 1,
+    "answers": [
+      "It promotes fish reproduction",
+      "It leads to coral bleaching.",
+      "It enhances marine biodiversity.",
+      "It reduces water temperature."
+    ],
+    "haslink": true,
+    "startPosition": {
+      "x": 100.0,
+      "y": 200.0
     },
-    {
-        "question": null,
-        "hint": null,
-        "rightindx":null,
-        "answers":null,
-        "haslink": true
-        ,"startPosition": null,
-  "endPosition": null
-  }
-    ,
-    {
-        "question": "What might be a consequence of ice sheets melting in polar regions?",
-        "hint": "Reflect on what happens when ice turns to water.",
-        "rightindx": 1,
-        "answers": [
-            "Lower sea levels",
-"Rising sea levels",
-"Ocean freezing",
-"Less water in the oceans"
-        ],
-        "haslink": true,
-        "startPosition": {
-    "x": 100.0,
-    "y": 200.0
-  },
-  "endPosition": {
-    "x": 300.0,
-    "y": 400.0
-  }
-    },
-    {
-        "question": " How might the rise in greenhouse gases affect both the climate and ocean chemistry?",
-        "hint": "Consider the dual impact of CO2 on the atmosphere and the ocean.",
-        "rightindx": 1,
-        "answers": [
-"They increase sunlight.",
-"They trap heat, warming air and water.",
-"They lower ocean temperatures.",
-"They block harmful substances."
-
-],
-        "haslink": true,
-        "startPosition": {
-    "x": 100.0,
-    "y": 200.0
-  },
-  "endPosition": {
-    "x": 300.0,
-    "y": 400.0
-  }
-    },
-    {
-        "question": "Could rising temperatures be related to the increase in wildfires?",
-        "hint": "Consider how heat impacts vegetation dryness.",
-        "rightindx": 3,
-        "answers": [
-            "More global cooling",
-            "Fewer forests",
-            "Faster snow melt",
-            "Drier conditions"
-        ],
-        "haslink": true,
-        "startPosition": {
-    "x": 100.0,
-    "y": 200.0
-  },
-  "endPosition": {
-    "x": 300.0, 
-    "y": 400.0
-  }
-    },
-    
-    {
-        "question": "What could wildfires release that affects the air we breathe?",
-        "hint": "Think about the smoke and pollutants released.",
-        "rightindx": 2,
-        "answers": [
-            "Fresh oxygen",
-"Water vapor", 
-"Smoke and harmful particles",
-
-"Cooler air"
-        ],
-        "haslink": true,
-        "startPosition": {
-    "x": 100.0,
-    "y": 200.0
-  },
-  "endPosition": {
-    "x": 300.0,
-    "y": 400.0
-  }
-    },
-    {
-        "question": null,
-        "hint": null,
-        "rightindx":null,
-        "answers":null,
-        "haslink": true
-        ,"startPosition": null,
-  "endPosition": null
+    "endPosition": {
+      "x": 300.0,
+      "y": 400.0
+    }
   },
   {
     "question": null,
     "hint": null,
-    "rightindx":null,
-    "answers":null,
-    "haslink": true
-    ,"startPosition": null,
-"endPosition": null
-}
-    
-    
+    "rightindx": null,
+    "answers": null,
+    "haslink": true,
+    "startPosition": null,
+    "endPosition": null
+  },
+  {
+    "question": "What might be a consequence of ice sheets melting in polar regions?",
+    "hint": "Reflect on what happens when ice turns to water.",
+    "rightindx": 1,
+    "answers": [
+      "Lower sea levels",
+      "Rising sea levels",
+      "Ocean freezing",
+      "Less water in the oceans"
+    ],
+    "haslink": true,
+    "startPosition": {
+      "x": 100.0,
+      "y": 200.0
+    },
+    "endPosition": {
+      "x": 300.0,
+      "y": 400.0
+    }
+  },
+  {
+    "question": " How might the rise in greenhouse gases affect both the climate and ocean chemistry?",
+    "hint": "Consider the dual impact of CO2 on the atmosphere and the ocean.",
+    "rightindx": 1,
+    "answers": [
+      "They increase sunlight.",
+      "They trap heat, warming air and water.",
+      "They lower ocean temperatures.",
+      "They block harmful substances."
+    ],
+    "haslink": true,
+    "startPosition": {
+      "x": 100.0,
+      "y": 200.0
+    },
+    "endPosition": {
+      "x": 300.0,
+      "y": 400.0
+    }
+  },
+  {
+    "question": "Could rising temperatures be related to the increase in wildfires?",
+    "hint": "Consider how heat impacts vegetation dryness.",
+    "rightindx": 3,
+    "answers": [
+      "More global cooling",
+      "Fewer forests",
+      "Faster snow melt",
+      "Drier conditions"
+    ],
+    "haslink": true,
+    "startPosition": {
+      "x": 100.0,
+      "y": 200.0
+    },
+    "endPosition": {
+      "x": 300.0,
+      "y": 400.0
+    }
+  },
+  {
+    "question": "What could wildfires release that affects the air we breathe?",
+    "hint": "Think about the smoke and pollutants released.",
+    "rightindx": 2,
+    "answers": [
+      "Fresh oxygen",
+      "Water vapor",
+      "Smoke and harmful particles",
+      "Cooler air"
+    ],
+    "haslink": true,
+    "startPosition": {
+      "x": 100.0,
+      "y": 200.0
+    },
+    "endPosition": {
+      "x": 300.0,
+      "y": 400.0
+    }
+  },
+  {
+    "question": null,
+    "hint": null,
+    "rightindx": null,
+    "answers": null,
+    "haslink": true,
+    "startPosition": null,
+    "endPosition": null
+  },
+  {
+    "question": null,
+    "hint": null,
+    "rightindx": null,
+    "answers": null,
+    "haslink": true,
+    "startPosition": null,
+    "endPosition": null
+  }
 ]

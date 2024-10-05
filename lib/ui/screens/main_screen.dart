@@ -206,7 +206,7 @@ class MainScreen extends StatelessWidget {
                                     child: NavigationButton(
                                       onTap: () {
                                         Navigation.push(
-                                            context, InvetigateScreen());
+                                            context, InvestigateScreen());
                                       },
                                       text: "Investigate",
                                     ),

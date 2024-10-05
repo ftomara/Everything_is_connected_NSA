@@ -118,10 +118,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                     _selectedAnswerIndex = i;
                                   });
                                   if (i == widget.questionmodel.rightindx) {
-                                    Map<Offset, Offset> offsetsMap = {
-                                      widget.questionmodel.start!:
-                                          widget.questionmodel.end!
-                                    };
+                                    List<Map<Offset, Offset>?> offsetsMap = widget.questionmodel.list??[];
                                     context
                                         .read<LineslistCubit>()
                                         .add(offsetsMap);
@@ -131,7 +128,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            InvetigateScreen(mp: offsetsMap),
+                                            InvestigateScreen(mp: offsetsMap),
                                       ),
                                     );
                                   } else {

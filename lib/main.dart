@@ -6,6 +6,7 @@ import 'package:everything_is_connected_app/core/utils/common_widgets/background
 import 'package:everything_is_connected_app/ui/screens/category_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_ai_chat.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_info_screen.dart';
+import 'package:everything_is_connected_app/ui/screens/intro.dart';
 import 'package:everything_is_connected_app/ui/screens/main_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/question_screen.dart';
 
@@ -40,7 +41,9 @@ class MyApp extends StatelessWidget {
             // home: MainScreen(),
             // home: ExploreAiChat(),
             // home: ExploreInfoScreen(),
-            home: MainScreen()),
+            // home: MainScreen()
+            home: Intro(),
+            ),
       ),
     );
   }

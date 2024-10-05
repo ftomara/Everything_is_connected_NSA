@@ -79,7 +79,7 @@ class ExploreScreen extends StatelessWidget {
                                   )),
                               Positioned(
                                   left: 109.w,
-                                  top: 90.h,
+                                  top: 40.h,
                                   child: ChooseSystem(
                                     imageBorde: ImageBorde(
                                         border:
@@ -163,7 +163,7 @@ class ExploreScreen extends StatelessWidget {
                                  */
                               Line(
                                   start: Offset(16.w + 10.5.w, 90.h),
-                                  end: Offset(109.w + 10.5.w, 90.h)),
+                                  end: Offset(109.w + 10.5.w, 45.h)),
                               Line(
                                   start: Offset(16.w + 10.5.w, 90.h),
                                   end: Offset(67.w + 10.5.w, 180.h)),
