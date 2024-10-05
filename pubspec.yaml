@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animated_text_kit: ^4.2.2
+  audioplayers: ^6.1.0
   bloc: null
   cupertino_icons: ^1.0.8
   dio: ^5.7.0
@@ -43,6 +44,7 @@ dependencies:
   flutter_markdown: null
   flutter_screenutil: ^5.9.3
   flutter_svg: null
+  flutter_vlc_player: ^7.4.2
   freezed: null
   get_it: ^8.0.0
   google_fonts: ^6.2.1
@@ -54,7 +56,6 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   url_launcher: ^6.2.4
   video_player: ^2.9.2
-  flutter_vlc_player: ^7.4.2
 dev_dependencies:
   build_runner: null
   flutter_gen_runner: null
