@@ -6,6 +6,7 @@ import 'package:everything_is_connected_app/model/image_borde.dart';
 import 'package:everything_is_connected_app/model/system_info.dart';
 import 'package:everything_is_connected_app/ui/screens/explore_screen.dart';
 import 'package:everything_is_connected_app/ui/screens/invetigate_screen.dart';
+import 'package:everything_is_connected_app/ui/screens/outro.dart';
 import 'package:everything_is_connected_app/ui/widgets/category_button.dart';
 import 'package:everything_is_connected_app/ui/widgets/choose_system.dart';
 import 'package:everything_is_connected_app/ui/widgets/navigation_button.dart';
@@ -131,8 +132,7 @@ class MainScreen extends StatelessWidget {
                               imageBorde: ImageBorde(
                                   border:
                                       "assets/images/image_frame/Greenhouse Gases.svg",
-                                  image:
-                                      "assets/images/green_icon.png"),
+                                  image: "assets/images/green_icon.png"),
                               isMain: true,
                             )),
                         Positioned(
@@ -175,6 +175,30 @@ class MainScreen extends StatelessWidget {
                                   image: "assets/images/sea_icon.png"),
                               isMain: true,
                             )),
+
+                        Positioned(
+                          left: isMobile
+                              ? 40.w
+                              : 230
+                                  .w, // Adjust left positioning inside the frame
+                          top: isMobile
+                              ? 40.h
+                              : 420
+                                  .h, // Adjust top positioning inside the frame
+                          child: InkWell(
+                            onTap: () {
+                              Navigation.push(context, Outro());
+                            },
+                            child: SvgPicture.asset(
+                              "assets/images/human.svg",
+                              height: isMobile ? 120.w : 16.w,
+
+                              width: isMobile
+                                  ? 120.w
+                                  : 10.w, // Adjust the size for mobile or desktop
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(
