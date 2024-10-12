@@ -179,11 +179,11 @@ class MainScreen extends StatelessWidget {
                         Positioned(
                           left: isMobile
                               ? 40.w
-                              : 230
+                              : 237
                                   .w, // Adjust left positioning inside the frame
                           top: isMobile
                               ? 40.h
-                              : 420
+                              : 300.h
                                   .h, // Adjust top positioning inside the frame
                           child: InkWell(
                             onTap: () {
