@@ -29,7 +29,7 @@ class _ExploreAiChatState extends State<ExploreAiChat> {
   final TextEditingController _textController = TextEditingController();
   final FocusNode _textFieldFocus = FocusNode();
   bool _loading = false;
-  static const _apiKey = 'AIzaSyDjfsQOP3kSB8BF7-88iIUf8fqFkC8uNqg';
+  static const _apiKey = 'Api';
   void _scrollDown() {
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => _scrollController.animateTo(
